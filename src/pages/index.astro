@@ -34,7 +34,7 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 	<div
 		class="fixed flex flex-col items-center justify-between h-screen px-20 py-16 w-full z-30"
 	>
-		<header class="flex justify-between w-full z-[70]">
+		<header class="flex justify-between w-full">
 			<a href="/" aria-label="Ir a inicio">
 				<LogoVI
 					class="size-11 text-white hover:text-yellow-100 transition-colors duration-500 cursor-pointer"
@@ -42,7 +42,7 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 			</a>
 			<button
 				id="menu-toggle"
-				class="flex items-center justify-center group hover:cursor-pointer relative w-12 h-12 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300"
+				class="flex items-center justify-center group hover:cursor-pointer relative w-12 h-12 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 z-[100]"
 				aria-label="Abrir menú"
 			>
 				<div class="relative w-7 h-7 flex items-center justify-center">
@@ -83,6 +83,21 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 	>
 	</div>
 
+	<!-- Botón de cerrar independiente (cruz) -->
+	<button
+		id="menu-close"
+		class="fixed top-16 right-20 w-12 h-12 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-[100] bg-white/20 hover:bg-white/30 rounded-full group cursor-pointer"
+	>
+		<div class="relative w-5 h-5 flex items-center justify-center">
+			<span
+				class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute rotate-45"
+			></span>
+			<span
+				class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute -rotate-45"
+			></span>
+		</div>
+	</button>
+
 	<nav
 		id="menu-panel"
 		class="fixed top-0 right-0 h-screen w-full translate-x-full transition-transform duration-700 ease-in-out z-50 flex"
@@ -98,15 +113,15 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 
 		<!-- Contenido del menú (mitad derecha del panel) -->
 		<div
-			class="w-1/2 px-12 py-16 overflow-y-auto flex flex-col"
+			class="w-1/2 px-12 pt-16 pb-8 flex flex-col"
 			style="background: linear-gradient(223.17deg, #1a0a0f 8.61%, #2d1520 17.21%, #1f0d15 25.82%, #260f1a 34.42%, #1c0b13 43.03%, #231018 51.63%)"
 		>
 			<!-- Nav principal horizontal -->
-			<ul class="flex gap-8 mb-12">
+			<ul class="flex gap-0 mb-12">
 				<li>
 					<button
 						data-section="personajes"
-						class="menu-main-item px-6 py-2 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full"
+						class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
 					>
 						Personajes
 					</button>
@@ -114,7 +129,7 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 				<li>
 					<button
 						data-section="lugares"
-						class="menu-main-item px-6 py-2 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full"
+						class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
 					>
 						Lugares
 					</button>
@@ -122,7 +137,7 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 				<li>
 					<button
 						data-section="traileres"
-						class="menu-main-item px-6 py-2 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full"
+						class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
 					>
 						Tráilers
 					</button>
@@ -130,201 +145,233 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 				<li>
 					<button
 						data-section="descargas"
-						class="menu-main-item px-6 py-2 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full"
+						class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
 					>
 						Descargas
 					</button>
 				</li>
 			</ul>
-			<div id="content-personajes" class="menu-content hidden">
-				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
-					Personajes
-				</h3>
-				<ul class="flex flex-col gap-3">
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Jason Duval</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Lucia Caminos</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Cal Hampton</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Boobie Ike</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Dre'Quan Priest</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Real Dimez</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Raul Bautista</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Brian Heder</a>
-					</li>
-				</ul>
-			</div>
 
-			<!-- Nav secundario - Lugares -->
-			<div id="content-lugares" class="menu-content hidden">
-				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
-					Lugares
-				</h3>
-				<ul class="flex flex-col gap-3">
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Vice City</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Cayos de Leonida</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Grassrivers</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Port Gellhorn</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Ambrosia</a>
-					</li>
-					<li>
-						<a
-							href="#"
-							class="text-white hover:text-yellow-100 transition-colors duration-300"
-							>Monte Kalaga</a>
-					</li>
-				</ul>
-			</div>
+			<!-- Contenedor centrado para el contenido dinámico -->
+			<div class="flex-1 flex items-center overflow-y-auto">
+				<div id="content-personajes" class="menu-content hidden">
+					<ul class="flex flex-col gap-2">
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Jason Duval</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Lucia Caminos</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Cal Hampton</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Boobie Ike</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Dre'Quan Priest</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Real Dimez</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Raul Bautista</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Brian Heder</a
+							>
+						</li>
+					</ul>
+				</div>
 
-			<!-- Nav secundario - Tráilers -->
-			<div id="content-traileres" class="menu-content hidden">
-				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
-					Tráilers
-				</h3>
-				<div class="flex flex-col gap-4">
-					<!-- Card Tráiler 2 -->
-					<a
-						href="#"
-						class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-					>
-						<div class="flex items-start justify-between mb-2">
-							<span class="text-sm font-semibold text-yellow-100"
-								>2:47</span
+				<!-- Nav secundario - Lugares -->
+				<div id="content-lugares" class="menu-content hidden">
+					<ul class="flex flex-col gap-2">
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Vice City</a
 							>
-							<span
-								class="text-xs bg-pink-500/80 px-2 py-1 rounded-full"
-								>Nuevo</span
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Cayos de Leonida</a
 							>
-						</div>
-						<h4 class="text-white font-semibold mb-1">
-							Grand Theft Auto VI - Tráiler 2
-						</h4>
-						<p class="text-sm text-white/60">6 de mayo de 2025</p>
-					</a>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Grassrivers</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Port Gellhorn</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Ambrosia</a
+							>
+						</li>
+						<li>
+							<a
+								href="#"
+								class="text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+								>Monte Kalaga</a
+							>
+						</li>
+					</ul>
+				</div>
 
-					<!-- Card Tráiler 1 -->
-					<a
-						href="#"
-						class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-					>
-						<div class="flex items-start justify-between mb-2">
-							<span class="text-sm font-semibold text-yellow-100"
-								>1:31</span
-							>
-						</div>
-						<h4 class="text-white font-semibold mb-1">
-							Grand Theft Auto VI - Tráiler 1
-						</h4>
-						<p class="text-sm text-white/60">
-							4 de diciembre de 2023
-						</p>
-					</a>
+				<!-- Nav secundario - Tráilers -->
+				<div id="content-traileres" class="menu-content hidden">
+					<h3 class="text-lg font-semibold text-yellow-100 mb-4">
+						Tráilers
+					</h3>
+					<div class="flex flex-col gap-4">
+						<!-- Card Tráiler 2 -->
+						<a
+							href="#"
+							class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+						>
+							<div class="flex items-start justify-between mb-2">
+								<span
+									class="text-sm font-semibold text-yellow-100"
+									>2:47</span
+								>
+								<span
+									class="text-xs bg-pink-500/80 px-2 py-1 rounded-full"
+									>Nuevo</span
+								>
+							</div>
+							<h4 class="text-white font-semibold mb-1">
+								Grand Theft Auto VI - Tráiler 2
+							</h4>
+							<p class="text-sm text-white/60">
+								6 de mayo de 2025
+							</p>
+						</a>
+
+						<!-- Card Tráiler 1 -->
+						<a
+							href="#"
+							class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+						>
+							<div class="flex items-start justify-between mb-2">
+								<span
+									class="text-sm font-semibold text-yellow-100"
+									>1:31</span
+								>
+							</div>
+							<h4 class="text-white font-semibold mb-1">
+								Grand Theft Auto VI - Tráiler 1
+							</h4>
+							<p class="text-sm text-white/60">
+								4 de diciembre de 2023
+							</p>
+						</a>
+					</div>
+				</div>
+
+				<!-- Nav secundario - Descargas -->
+				<div id="content-descargas" class="menu-content hidden">
+					<h3 class="text-lg font-semibold text-yellow-100 mb-4">
+						Descargas
+					</h3>
+					<div class="flex flex-col gap-4">
+						<!-- Card Vídeos -->
+						<a
+							href="#"
+							class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+						>
+							<h4 class="text-white font-semibold text-lg">
+								Vídeos
+							</h4>
+						</a>
+
+						<!-- Card Capturas -->
+						<a
+							href="#"
+							class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+						>
+							<h4 class="text-white font-semibold text-lg">
+								Capturas de pantalla
+							</h4>
+						</a>
+
+						<!-- Card Arte -->
+						<a
+							href="#"
+							class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+						>
+							<h4 class="text-white font-semibold text-lg">
+								Arte y fondos de pantalla
+							</h4>
+						</a>
+
+						<!-- Botón ver todas -->
+						<button
+							class="mt-2 w-full py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold transition-all duration-300 border border-white/20 hover:border-yellow-100/50"
+						>
+							Ver todas las descargas
+						</button>
+					</div>
 				</div>
 			</div>
 
-			<!-- Nav secundario - Descargas -->
-			<div id="content-descargas" class="menu-content hidden">
-				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
-					Descargas
-				</h3>
-				<div class="flex flex-col gap-4">
-					<!-- Card Vídeos -->
-					<a
-						href="#"
-						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-					>
-						<h4 class="text-white font-semibold text-lg">Vídeos</h4>
-					</a>
-
-					<!-- Card Capturas -->
-					<a
-						href="#"
-						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-					>
-						<h4 class="text-white font-semibold text-lg">
-							Capturas de pantalla
-						</h4>
-					</a>
-
-					<!-- Card Arte -->
-					<a
-						href="#"
-						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-					>
-						<h4 class="text-white font-semibold text-lg">
-							Arte y fondos de pantalla
-						</h4>
-					</a>
-
-					<!-- Botón ver todas -->
-					<button
-						class="mt-2 w-full py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold transition-all duration-300 border border-white/20 hover:border-yellow-100/50"
-					>
-						Ver todas las descargas
-					</button>
-				</div>
-			</div>
+			<!-- Footer del menú -->
+			<footer class="mt-8 pt-6 flex justify-between items-center">
+				<button
+					class="text-white hover:text-yellow-100 transition-colors duration-300 font-semibold"
+				>
+					Idioma: ES
+				</button>
+				<button
+					class="text-white hover:text-yellow-100 transition-colors duration-300 font-semibold"
+				>
+					Movimiento: ON
+				</button>
+			</footer>
 		</div>
 	</nav>
 </Layout>
@@ -432,55 +479,59 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 
 	// Menú hamburguesa
 	const menuToggle = document.getElementById("menu-toggle");
+	const menuClose = document.getElementById("menu-close");
 	const menuPanel = document.getElementById("menu-panel");
 	const menuOverlay = document.getElementById("menu-overlay");
-	const menuLine1 = document.getElementById("menu-line-1");
-	const menuLine2 = document.getElementById("menu-line-2");
 	const menuMainItems = document.querySelectorAll(".menu-main-item");
 	const menuContents = document.querySelectorAll(".menu-content");
 
 	let isMenuOpen = false;
 
-	// Toggle menú
+	// Abrir menú
 	menuToggle?.addEventListener("click", () => {
-		isMenuOpen = !isMenuOpen;
+		isMenuOpen = true;
+		menuPanel?.classList.remove("translate-x-full");
+		menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
+		menuOverlay?.classList.add("opacity-100");
 
-		if (isMenuOpen) {
-			// Abrir menú
-			menuPanel?.classList.remove("translate-x-full");
-			menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
-			menuOverlay?.classList.add("opacity-100");
+		// Animar botón hamburguesa a cruz
+		menuToggle?.classList.add("menu-open");
 
-			// Animar a cruz y agregar fondo redondo
-			menuToggle?.classList.add("menu-open");
+		// Mostrar cruz de cerrar independiente
+		menuClose?.classList.remove("opacity-0", "pointer-events-none");
+		menuClose?.classList.add("opacity-100");
 
-			// Mostrar primera sección por defecto
-			if (!document.querySelector(".menu-content:not(.hidden)")) {
-				document
-					.getElementById("content-personajes")
-					?.classList.remove("hidden");
-				// Activar primer botón
-				document
-					.querySelector('[data-section="personajes"]')
-					?.classList.add("active");
-			}
-		} else {
-			// Cerrar menú
-			menuPanel?.classList.add("translate-x-full");
-			menuOverlay?.classList.add("opacity-0", "pointer-events-none");
-			menuOverlay?.classList.remove("opacity-100");
-
-			// Volver a hamburguesa y quitar fondo
-			menuToggle?.classList.remove("menu-open");
+		// Mostrar primera sección por defecto
+		if (!document.querySelector(".menu-content:not(.hidden)")) {
+			document
+				.getElementById("content-personajes")
+				?.classList.remove("hidden");
+			document
+				.querySelector('[data-section="personajes"]')
+				?.classList.add("active");
 		}
 	});
+
+	// Cerrar menú
+	const closeMenu = () => {
+		isMenuOpen = false;
+		menuPanel?.classList.add("translate-x-full");
+		menuOverlay?.classList.add("opacity-0", "pointer-events-none");
+		menuOverlay?.classList.remove("opacity-100");
+
+		// Volver hamburguesa
+		menuToggle?.classList.remove("menu-open");
+
+		// Ocultar cruz de cerrar independiente
+		menuClose?.classList.add("opacity-0", "pointer-events-none");
+		menuClose?.classList.remove("opacity-100");
+	};
+
+	// Cerrar con botón cruz
+	menuClose?.addEventListener("click", closeMenu);
 
 	// Cerrar al hacer clic en overlay
-	menuOverlay?.addEventListener("click", () => {
-		if (isMenuOpen) {
-			menuToggle?.click();
-		}
-	});
+	menuOverlay?.addEventListener("click", closeMenu);
 
 	// Navegación entre secciones
 	menuMainItems.forEach((item) => {
