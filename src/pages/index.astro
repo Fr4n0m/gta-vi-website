@@ -32,20 +32,30 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 	</div>
 
 	<div
-		class="fixed flex flex-col items-center justify-between h-screen px-20 py-16 w-full"
+		class="fixed flex flex-col items-center justify-between h-screen px-20 py-16 w-full z-30"
 	>
-		<header class="flex justify-between w-full">
-			<LogoVI
-				class="size-11 text-white hover:text-yellow-100 transition-colors duration-500 cursor-pointer"
-			/>
-			<span class="flex flex-col gap-1.5 group hover:cursor-pointer">
-				<span
-					class="w-7 h-1.5 bg-white group-hover:bg-yellow-100 transition-colors duration-500"
-				></span>
-				<span
-					class="w-7 h-1.5 bg-white group-hover:bg-yellow-100 transition-colors duration-500"
-				></span>
-			</span>
+		<header class="flex justify-between w-full z-[70]">
+			<a href="/" aria-label="Ir a inicio">
+				<LogoVI
+					class="size-11 text-white hover:text-yellow-100 transition-colors duration-500 cursor-pointer"
+				/>
+			</a>
+			<button
+				id="menu-toggle"
+				class="flex items-center justify-center group hover:cursor-pointer relative w-12 h-12 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300"
+				aria-label="Abrir menú"
+			>
+				<div class="relative w-7 h-7 flex items-center justify-center">
+					<span
+						id="menu-line-1"
+						class="w-7 h-1.5 bg-white group-hover:bg-yellow-100 transition-all duration-500 absolute"
+					></span>
+					<span
+						id="menu-line-2"
+						class="w-7 h-1.5 bg-white group-hover:bg-yellow-100 transition-all duration-500 absolute"
+					></span>
+				</div>
+			</button>
 		</header>
 
 		<button class="inset-0 m-auto inline-block">
@@ -65,6 +75,258 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 			>
 		</footer>
 	</div>
+
+	<!-- Menú desplegable -->
+	<div
+		id="menu-overlay"
+		class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 z-40"
+	>
+	</div>
+
+	<nav
+		id="menu-panel"
+		class="fixed top-0 right-0 h-screen w-full translate-x-full transition-transform duration-700 ease-in-out z-50 flex"
+	>
+		<!-- Imagen con degradado (mitad izquierda del panel) -->
+		<div class="w-1/2 relative overflow-hidden">
+			<div
+				class="absolute inset-0 bg-gradient-to-r from-transparent via-[#1a0a0f]/80 to-[#2d1520]"
+			>
+			</div>
+			<img src="/menu-bg.jpg" alt="" class="w-full h-full object-cover" />
+		</div>
+
+		<!-- Contenido del menú (mitad derecha del panel) -->
+		<div
+			class="w-1/2 px-12 py-16 overflow-y-auto flex flex-col"
+			style="background: linear-gradient(223.17deg, #1a0a0f 8.61%, #2d1520 17.21%, #1f0d15 25.82%, #260f1a 34.42%, #1c0b13 43.03%, #231018 51.63%)"
+		>
+			<!-- Nav principal horizontal -->
+			<ul class="flex gap-8 mb-12">
+				<li>
+					<button
+						data-section="personajes"
+						class="menu-main-item px-6 py-2 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full"
+					>
+						Personajes
+					</button>
+				</li>
+				<li>
+					<button
+						data-section="lugares"
+						class="menu-main-item px-6 py-2 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full"
+					>
+						Lugares
+					</button>
+				</li>
+				<li>
+					<button
+						data-section="traileres"
+						class="menu-main-item px-6 py-2 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full"
+					>
+						Tráilers
+					</button>
+				</li>
+				<li>
+					<button
+						data-section="descargas"
+						class="menu-main-item px-6 py-2 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full"
+					>
+						Descargas
+					</button>
+				</li>
+			</ul>
+			<div id="content-personajes" class="menu-content hidden">
+				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
+					Personajes
+				</h3>
+				<ul class="flex flex-col gap-3">
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Jason Duval</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Lucia Caminos</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Cal Hampton</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Boobie Ike</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Dre'Quan Priest</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Real Dimez</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Raul Bautista</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Brian Heder</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Nav secundario - Lugares -->
+			<div id="content-lugares" class="menu-content hidden">
+				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
+					Lugares
+				</h3>
+				<ul class="flex flex-col gap-3">
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Vice City</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Cayos de Leonida</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Grassrivers</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Port Gellhorn</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Ambrosia</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							class="text-white hover:text-yellow-100 transition-colors duration-300"
+							>Monte Kalaga</a>
+					</li>
+				</ul>
+			</div>
+
+			<!-- Nav secundario - Tráilers -->
+			<div id="content-traileres" class="menu-content hidden">
+				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
+					Tráilers
+				</h3>
+				<div class="flex flex-col gap-4">
+					<!-- Card Tráiler 2 -->
+					<a
+						href="#"
+						class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+					>
+						<div class="flex items-start justify-between mb-2">
+							<span class="text-sm font-semibold text-yellow-100"
+								>2:47</span
+							>
+							<span
+								class="text-xs bg-pink-500/80 px-2 py-1 rounded-full"
+								>Nuevo</span
+							>
+						</div>
+						<h4 class="text-white font-semibold mb-1">
+							Grand Theft Auto VI - Tráiler 2
+						</h4>
+						<p class="text-sm text-white/60">6 de mayo de 2025</p>
+					</a>
+
+					<!-- Card Tráiler 1 -->
+					<a
+						href="#"
+						class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+					>
+						<div class="flex items-start justify-between mb-2">
+							<span class="text-sm font-semibold text-yellow-100"
+								>1:31</span
+							>
+						</div>
+						<h4 class="text-white font-semibold mb-1">
+							Grand Theft Auto VI - Tráiler 1
+						</h4>
+						<p class="text-sm text-white/60">
+							4 de diciembre de 2023
+						</p>
+					</a>
+				</div>
+			</div>
+
+			<!-- Nav secundario - Descargas -->
+			<div id="content-descargas" class="menu-content hidden">
+				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
+					Descargas
+				</h3>
+				<div class="flex flex-col gap-4">
+					<!-- Card Vídeos -->
+					<a
+						href="#"
+						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+					>
+						<h4 class="text-white font-semibold text-lg">Vídeos</h4>
+					</a>
+
+					<!-- Card Capturas -->
+					<a
+						href="#"
+						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+					>
+						<h4 class="text-white font-semibold text-lg">
+							Capturas de pantalla
+						</h4>
+					</a>
+
+					<!-- Card Arte -->
+					<a
+						href="#"
+						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+					>
+						<h4 class="text-white font-semibold text-lg">
+							Arte y fondos de pantalla
+						</h4>
+					</a>
+
+					<!-- Botón ver todas -->
+					<button
+						class="mt-2 w-full py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold transition-all duration-300 border border-white/20 hover:border-yellow-100/50"
+					>
+						Ver todas las descargas
+					</button>
+				</div>
+			</div>
+		</div>
+	</nav>
 </Layout>
 
 <style>
@@ -74,6 +336,46 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 		mask-position: center 25%;
 		mask-repeat: no-repeat;
 		mask-size: clamp(5000vh, 3500%, 0vh);
+	}
+</style>
+
+<style>
+	#menu-toggle.menu-open::before {
+		content: "";
+		background-color: rgba(255, 255, 255, 0.2);
+	}
+
+	#menu-toggle.menu-open:hover::before {
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+
+	/* Estado hamburguesa - líneas separadas */
+	#menu-line-1 {
+		transform: translateY(-6px);
+	}
+
+	#menu-line-2 {
+		transform: translateY(6px);
+	}
+
+	/* Estado cruz - líneas centradas y rotadas */
+	#menu-toggle.menu-open #menu-line-1 {
+		transform: translateY(0) rotate(45deg);
+		width: 1.25rem; /* 20px - más pequeña que los 28px originales */
+		height: 0.25rem; /* 4px - grosor intermedio */
+	}
+
+	#menu-toggle.menu-open #menu-line-2 {
+		transform: translateY(0) rotate(-45deg);
+		width: 1.25rem; /* 20px - más pequeña que los 28px originales */
+		height: 0.25rem; /* 4px - grosor intermedio */
+	}
+
+	/* Estilo para botón activo del menú */
+	.menu-main-item.active {
+		background-color: white;
+		color: #111;
+		border-radius: 9999px;
 	}
 </style>
 
@@ -127,4 +429,83 @@ import LogoCutted from "@/assets/logo-cutted.svg";
 			},
 			0.4,
 		);
+
+	// Menú hamburguesa
+	const menuToggle = document.getElementById("menu-toggle");
+	const menuPanel = document.getElementById("menu-panel");
+	const menuOverlay = document.getElementById("menu-overlay");
+	const menuLine1 = document.getElementById("menu-line-1");
+	const menuLine2 = document.getElementById("menu-line-2");
+	const menuMainItems = document.querySelectorAll(".menu-main-item");
+	const menuContents = document.querySelectorAll(".menu-content");
+
+	let isMenuOpen = false;
+
+	// Toggle menú
+	menuToggle?.addEventListener("click", () => {
+		isMenuOpen = !isMenuOpen;
+
+		if (isMenuOpen) {
+			// Abrir menú
+			menuPanel?.classList.remove("translate-x-full");
+			menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
+			menuOverlay?.classList.add("opacity-100");
+
+			// Animar a cruz y agregar fondo redondo
+			menuToggle?.classList.add("menu-open");
+
+			// Mostrar primera sección por defecto
+			if (!document.querySelector(".menu-content:not(.hidden)")) {
+				document
+					.getElementById("content-personajes")
+					?.classList.remove("hidden");
+				// Activar primer botón
+				document
+					.querySelector('[data-section="personajes"]')
+					?.classList.add("active");
+			}
+		} else {
+			// Cerrar menú
+			menuPanel?.classList.add("translate-x-full");
+			menuOverlay?.classList.add("opacity-0", "pointer-events-none");
+			menuOverlay?.classList.remove("opacity-100");
+
+			// Volver a hamburguesa y quitar fondo
+			menuToggle?.classList.remove("menu-open");
+		}
+	});
+
+	// Cerrar al hacer clic en overlay
+	menuOverlay?.addEventListener("click", () => {
+		if (isMenuOpen) {
+			menuToggle?.click();
+		}
+	});
+
+	// Navegación entre secciones
+	menuMainItems.forEach((item) => {
+		item.addEventListener("click", () => {
+			const section = item.getAttribute("data-section");
+
+			// Quitar clase active de todos los botones
+			menuMainItems.forEach((btn) => {
+				btn.classList.remove("active");
+			});
+
+			// Agregar clase active al botón clickeado
+			item.classList.add("active");
+
+			// Ocultar todas las secciones
+			menuContents.forEach((content) => {
+				content.classList.add("hidden");
+			});
+
+			// Mostrar sección seleccionada
+			if (section) {
+				document
+					.getElementById(`content-${section}`)
+					?.classList.remove("hidden");
+			}
+		});
+	});
 </script>
