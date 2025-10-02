@@ -524,73 +524,112 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 				</div>
 
 				<!-- Nav secundario - Descargas -->
-				<div
-					id="content-descargas"
-					class="menu-content hidden w-full pt-20"
-				>
+				<div id="content-descargas" class="menu-content hidden w-full flex items-start h-full">
 					<div
-						class="flex flex-col gap-3 justify-center items-center h-full"
+						class="flex flex-col gap-4 items-center w-full max-w-2xl mx-auto py-4"
 					>
 						<!-- Card Vídeos -->
 						<a
 							href="#"
-							class="transition-all duration-300 border-0 hover:border-3 border-yellow-100 w-full relative overflow-x-hidden overflow-y-auto hide-scrollbar group h-[200px]"
-							style={`background-image:url(${VideosBg.src}); background-size: contain; background-repeat: no-repeat; background-position: center;`}
+							class="block w-full relative overflow-hidden group"
 						>
-							<span
-								class="absolute inset-0 bg-black/20 pointer-events-none"
-							></span>
-							<div class="relative z-[1] p-6">
-								<h4
-									class="text-yellow-100 uppercase font-narrow text-3xl"
-								>
-									Vídeos
-								</h4>
+							<!-- Contenedor de la imagen con altura fija -->
+							<div class="relative w-full h-[200px] overflow-visible">
+								<!-- Imagen de fondo -->
+								<img
+									src={VideosBg.src}
+									alt="Vídeos"
+									class="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:brightness-125 group-hover:scale-[0.99]"
+								/>
+								<!-- Overlay oscuro -->
+								<span
+									class="absolute inset-0 bg-black/20 pointer-events-none"
+								></span>
+								<!-- Borde en hover -->
+								<span
+									class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
+								></span>
+								<!-- Contenido -->
+								<div class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10">
+									<h4
+										class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
+									>
+										Vídeos
+									</h4>
+								</div>
 							</div>
 						</a>
 
 						<!-- Card Capturas -->
 						<a
 							href="#"
-							class="transition-all duration-300 border-0 hover:border-3 border-yellow-100 w-full relative overflow-x-hidden overflow-y-auto hide-scrollbar group h-[200px]"
-							style={`background-image:url(${ScreenshotsBg.src}); background-size: contain; background-repeat: no-repeat; background-position: center;`}
+							class="block w-full relative overflow-hidden group"
 						>
-							<span
-								class="absolute inset-0 bg-black/20 pointer-events-none"
-							></span>
-							<div class="relative z-[1] p-6">
-								<h4
-									class="text-yellow-100 uppercase font-narrow text-3xl"
-								>
-									Capturas de pantalla
-								</h4>
+							<!-- Contenedor de la imagen con altura fija -->
+							<div class="relative w-full h-[200px] overflow-visible">
+								<!-- Imagen de fondo -->
+								<img
+									src={ScreenshotsBg.src}
+									alt="Capturas de pantalla"
+									class="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:brightness-125 group-hover:scale-[0.99]"
+								/>
+								<!-- Overlay oscuro -->
+								<span
+									class="absolute inset-0 bg-black/20 pointer-events-none"
+								></span>
+								<!-- Borde en hover -->
+								<span
+									class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
+								></span>
+								<!-- Contenido -->
+								<div class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10">
+									<h4
+										class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
+									>
+										Capturas de pantalla
+									</h4>
+								</div>
 							</div>
 						</a>
 
 						<!-- Card Arte -->
 						<a
 							href="#"
-							class="transition-all duration-300 border-0 hover:border-3 border-yellow-100 w-full relative overflow-x-hidden overflow-y-auto hide-scrollbar group h-[200px]"
-							style={`background-image:url(${ArtworkBg.src}); background-size: contain; background-repeat: no-repeat; background-position: center;`}
+							class="block w-full relative overflow-hidden group"
 						>
-							<span
-								class="absolute inset-0 bg-black/20 pointer-events-none"
-							></span>
-							<div class="relative z-[1] p-6">
-								<h4
-									class="text-yellow-100 uppercase font-narrow text-3xl"
-								>
-									Arte y fondos de pantalla
-								</h4>
+							<!-- Contenedor de la imagen con altura fija -->
+							<div class="relative w-full h-[200px] overflow-visible">
+								<!-- Imagen de fondo -->
+								<img
+									src={ArtworkBg.src}
+									alt="Arte y fondos de pantalla"
+									class="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:brightness-125 group-hover:scale-[0.99]"
+								/>
+								<!-- Overlay oscuro -->
+								<span
+									class="absolute inset-0 bg-black/20 pointer-events-none"
+								></span>
+								<!-- Borde en hover -->
+								<span
+									class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
+								></span>
+								<!-- Contenido -->
+								<div class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10">
+									<h4
+										class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
+									>
+										Arte y fondos de pantalla
+									</h4>
+								</div>
 							</div>
 						</a>
 
 						<!-- Botón ver todas -->
 						<button
-							class="bg-white/5 text-white rounded-full font-semibold w-fit px-6 py-3 hover:bg-white/10 transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer"
+							class="mt-2 bg-white/5 text-white rounded-full font-semibold w-fit px-5 sm:px-6 py-2.5 sm:py-3 hover:bg-white/10 transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer text-sm sm:text-base"
 						>
 							Ver todas las descargas
-							<ArrowIcon class="size-4" />
+							<ArrowIcon class="size-3.5 sm:size-4" />
 						</button>
 					</div>
 				</div>
