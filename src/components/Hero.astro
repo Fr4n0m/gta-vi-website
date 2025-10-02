@@ -1,0 +1,134 @@
+---
+import HeroKeyLogo from "@/assets/hero-key-logo.webp";
+import HeroKeyBackground from "@/assets/hero-key-background.webp";
+import LogoVI from "@/assets/logo-vi.svg";
+import PlayButtonIcon from "@/assets/play-button.svg";
+import LogoCutted from "@/assets/logo-cutted.svg";
+---
+
+<div id="logo-mask" class="fixed top-0 w-full h-screen">
+    <section>
+        <picture
+            id="hero-key"
+            class="h-screen scale-125 block overflow-hidden fixed"
+        >
+            <img
+                id="hero-key-logo"
+                src={HeroKeyLogo.src}
+                class="absolute w-full h-full object-cover"
+                alt="GTA VI Key Logo"
+            />
+            <img
+                id="hero-key-background"
+                src={HeroKeyBackground.src}
+                class="w-full h-full object-cover"
+                alt="GTA VI Key Background"
+            />
+        </picture>
+    </section>
+</div>
+
+<div
+    class="fixed flex flex-col items-center justify-between h-screen px-20 py-16 w-full z-30"
+>
+    <header class="flex justify-between w-full">
+        <a href="/" aria-label="Ir a inicio">
+            <LogoVI
+                class="size-11 text-white hover:text-yellow-100 transition-colors duration-500 cursor-pointer"
+            />
+        </a>
+        <button
+            id="menu-toggle"
+            class="flex items-center justify-center group hover:cursor-pointer relative w-12 h-12 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 z-[100]"
+            aria-label="Abrir menú"
+        >
+            <div class="relative w-7 h-7 flex items-center justify-center">
+                <span
+                    id="menu-line-1"
+                    class="w-7 h-1.5 bg-white group-hover:bg-yellow-100 transition-all duration-500 absolute"
+                ></span>
+                <span
+                    id="menu-line-2"
+                    class="w-7 h-1.5 bg-white group-hover:bg-yellow-100 transition-all duration-500 absolute"
+                ></span>
+            </div>
+        </button>
+    </header>
+
+    <button class="inset-0 m-auto inline-block">
+        <PlayButtonIcon
+            id="hero-play-button"
+            class="text-white m-auto size-28 mt-10 backdrop-blur-3xl rounded-full hover:scale-110 transition-transform duration-500 cursor-pointer"
+        />
+    </button>
+
+    <footer id="hero-footer" class="absolute bottom-8 m-auto">
+        <LogoCutted
+            class="text-white w-38 drop-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000]"
+        />
+        <span
+            class="absolute uppercase tracking-[6px] whitespace-nowrap text-center top-[51px] font-bold text-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000] left-1/2 -translate-x-1/2"
+            >Ver el tráiler 2</span
+        >
+    </footer>
+</div>
+
+<style>
+    #logo-mask {
+        background: white;
+        mask-image: url("/logo-stack.svg");
+        mask-position: center 25%;
+        mask-repeat: no-repeat;
+        mask-size: clamp(5000vh, 3500%, 0vh);
+    }
+
+    #menu-toggle.menu-open::before {
+        content: "";
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    #menu-toggle.menu-open:hover::before {
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Estado hamburguesa - líneas separadas */
+    #menu-line-1 {
+        transform: translateY(-6px);
+    }
+
+    #menu-line-2 {
+        transform: translateY(6px);
+    }
+
+    /* Estado cruz - líneas centradas y rotadas */
+    #menu-toggle.menu-open #menu-line-1 {
+        transform: translateY(0) rotate(45deg);
+        width: 1.25rem; /* 20px */
+        height: 0.25rem; /* 4px */
+    }
+
+    #menu-toggle.menu-open #menu-line-2 {
+        transform: translateY(0) rotate(-45deg);
+        width: 1.25rem; /* 20px */
+        height: 0.25rem; /* 4px */
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    const tl = gsap.timeline({
+        ease: "power2.out",
+        scrollTrigger: { scrub: 1 },
+    });
+
+    tl.to("#hero-key", { duration: 1, scale: 1 })
+        .to("#hero-key-logo", { opacity: 0 }, "<")
+        .to("#hero-play-button", { opacity: 0 }, "<")
+        .to("#hero-footer", { opacity: 0 }, "<")
+        .to("#logo-mask", { maskSize: "clamp(20vh, 25%, 30vh)" }, 0.15)
+        .to("#hero-key", { opacity: 0, duration: 0.2 }, 0.4);
+</script>

@@ -250,7 +250,10 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			</div>
 
 			<!-- Logo VI SVG (por defecto) -->
-			<div id="menu-logo" class="absolute inset-0 flex items-center justify-center transition-opacity duration-500">
+			<div
+				id="menu-logo"
+				class="absolute inset-0 flex items-center justify-center transition-opacity duration-500"
+			>
 				<LogoMenu
 					class="text-white w-full max-w-[380px] px-12"
 					style="filter: drop-shadow(0 0 40px rgba(255,255,255,0.4)) drop-shadow(0 0 150px rgba(255,255,255,0.1));"
@@ -425,58 +428,76 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 				</div>
 
 				<!-- Nav secundario - Tráilers -->
-				<div id="content-traileres" class="menu-content hidden">
-					<h3 class="text-lg font-semibold text-yellow-100 mb-4">
-						Tráilers
-					</h3>
+				<div id="content-traileres" class="menu-content hidden w-full">
 					<div class="flex flex-col gap-4">
 						<!-- Card Tráiler 2 -->
 						<a
 							href="#"
-							class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+							class="flex gap-4 block bg-[#232329] transition-all duration-300 bg-red hover:bg-[#29292e]"
 						>
-							<div class="flex items-start justify-between mb-2">
+							<div class="w-1/2">
+								<img
+									src="/src/assets/t2.webp"
+									alt="Trailer 2"
+								/>
 								<span
-									class="text-sm font-semibold text-yellow-100"
+									class="aboslute p-1 bg-[#232329] text-sm font-narrow font-semibold text-white"
 									>2:47</span
 								>
+							</div>
+
+							<div
+								class="w-1/2 flex flex-col justify-center items-start gap-2"
+							>
 								<span
-									class="text-xs bg-pink-500/80 px-2 py-1 rounded-full"
+									class="text-md w-fit font-narrow uppercase text-black px-2 bg-yellow-100"
 									>Nuevo</span
 								>
+								<h4 class="text-white text-md font-semibold">
+									Grand Theft Auto VI - Tráiler 2
+								</h4>
+								<p class="text-md text-white/60">
+									6 de mayo de 2025
+								</p>
 							</div>
-							<h4 class="text-white font-semibold mb-1">
-								Grand Theft Auto VI - Tráiler 2
-							</h4>
-							<p class="text-sm text-white/60">
-								6 de mayo de 2025
-							</p>
 						</a>
 
 						<!-- Card Tráiler 1 -->
 						<a
 							href="#"
-							class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+							class="flex gap-4 block bg-[#232329] transition-all duration-300 bg-red hover:bg-[#29292e]"
 						>
-							<div class="flex items-start justify-between mb-2">
+							<div class="w-1/2">
+								<img
+									src="/src/assets/t1.webp"
+									alt="Trailer 2"
+								/>
 								<span
-									class="text-sm font-semibold text-yellow-100"
+									class="aboslute p-1 bg-[#232329] text-sm font-narrow font-semibold text-white"
 									>1:31</span
 								>
 							</div>
-							<h4 class="text-white font-semibold mb-1">
-								Grand Theft Auto VI - Tráiler 1
-							</h4>
-							<p class="text-sm text-white/60">
-								4 de diciembre de 2023
-							</p>
+
+							<div
+								class="w-1/2 flex flex-col justify-center items-start gap-2"
+							>
+								<h4 class="text-white text-md font-semibold">
+									Grand Theft Auto VI - Tráiler 1
+								</h4>
+								<p class="text-md text-white/60">
+									4 de diciembre de 2023
+								</p>
+							</div>
 						</a>
 					</div>
 				</div>
 
 				<!-- Nav secundario - Descargas -->
-				<div id="content-descargas" class="menu-content hidden">
-					<h3 class="text-lg font-semibold text-yellow-100 mb-4">
+				<div id="content-descargas" class="menu-content hidden w-full">
+					<h3 class="text-lg
+					font-semibold
+					text-yellow-100
+					mb-4">
 						Descargas
 					</h3>
 					<div class="flex flex-col gap-4">
@@ -582,232 +603,232 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			</footer>
 		</div>
 	</nav>
-</Layout>
 
-<style>
-	#logo-mask {
-		background: white;
-		mask-image: url("/logo-stack.svg");
-		mask-position: center 25%;
-		mask-repeat: no-repeat;
-		mask-size: clamp(5000vh, 3500%, 0vh);
-	}
-</style>
-
-<style>
-	#menu-toggle.menu-open::before {
-		content: "";
-		background-color: rgba(255, 255, 255, 0.2);
-	}
-
-	#menu-toggle.menu-open:hover::before {
-		background-color: rgba(255, 255, 255, 0.3);
-	}
-
-	/* Estado hamburguesa - líneas separadas */
-	#menu-line-1 {
-		transform: translateY(-6px);
-	}
-
-	#menu-line-2 {
-		transform: translateY(6px);
-	}
-
-	/* Estado cruz - líneas centradas y rotadas */
-	#menu-toggle.menu-open #menu-line-1 {
-		transform: translateY(0) rotate(45deg);
-		width: 1.25rem; /* 20px - más pequeña que los 28px originales */
-		height: 0.25rem; /* 4px - grosor intermedio */
-	}
-
-	#menu-toggle.menu-open #menu-line-2 {
-		transform: translateY(0) rotate(-45deg);
-		width: 1.25rem; /* 20px - más pequeña que los 28px originales */
-		height: 0.25rem; /* 4px - grosor intermedio */
-	}
-
-	/* Estilo para botón activo del menú */
-	.menu-main-item.active {
-		background-color: white;
-		color: #111;
-		border-radius: 9999px;
-	}
-</style>
-
-<script>
-	import { gsap } from "gsap";
-	import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-	gsap.registerPlugin(ScrollTrigger);
-
-	const tl = gsap.timeline({
-		ease: "power2.out",
-		scrollTrigger: {
-			scrub: 1,
-		},
-	});
-
-	tl.to("#hero-key", { duration: 1, scale: 1 })
-		.to(
-			"#hero-key-logo",
-			{
-				opacity: 0,
-			},
-			"<",
-		)
-		.to(
-			"#hero-play-button",
-			{
-				opacity: 0,
-			},
-			"<",
-		)
-		.to(
-			"#hero-footer",
-			{
-				opacity: 0,
-			},
-			"<",
-		)
-		.to(
-			"#logo-mask",
-			{
-				maskSize: "clamp(20vh, 25%, 30vh)",
-			},
-			0.15,
-		)
-		.to(
-			"#hero-key",
-			{
-				opacity: 0,
-				duration: 0.2,
-			},
-			0.4,
-		);
-
-	// Menú hamburguesa
-	const menuToggle = document.getElementById("menu-toggle");
-	const menuClose = document.getElementById("menu-close");
-	const menuPanel = document.getElementById("menu-panel");
-	const menuOverlay = document.getElementById("menu-overlay");
-	const menuMainItems = document.querySelectorAll(".menu-main-item");
-	const menuContents = document.querySelectorAll(".menu-content");
-
-	let isMenuOpen = false;
-
-	// Abrir menú
-	menuToggle?.addEventListener("click", () => {
-		isMenuOpen = true;
-		menuPanel?.classList.remove("translate-x-full");
-		menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
-		menuOverlay?.classList.add("opacity-100");
-
-		// Animar botón hamburguesa a cruz
-		menuToggle?.classList.add("menu-open");
-
-		// Mostrar cruz de cerrar independiente
-		menuClose?.classList.remove("opacity-0", "pointer-events-none");
-		menuClose?.classList.add("opacity-100");
-
-		// Mostrar primera sección por defecto
-		if (!document.querySelector(".menu-content:not(.hidden)")) {
-			document
-				.getElementById("content-personajes")
-				?.classList.remove("hidden");
-			document
-				.querySelector('[data-section="personajes"]')
-				?.classList.add("active");
+	<style>
+		#logo-mask {
+			background: white;
+			mask-image: url("/logo-stack.svg");
+			mask-position: center 25%;
+			mask-repeat: no-repeat;
+			mask-size: clamp(5000vh, 3500%, 0vh);
 		}
-	});
+	</style>
 
-	// Cerrar menú
-	const closeMenu = () => {
-		isMenuOpen = false;
-		menuPanel?.classList.add("translate-x-full");
-		menuOverlay?.classList.add("opacity-0", "pointer-events-none");
-		menuOverlay?.classList.remove("opacity-100");
+	<style>
+		#menu-toggle.menu-open::before {
+			content: "";
+			background-color: rgba(255, 255, 255, 0.2);
+		}
 
-		// Volver hamburguesa
-		menuToggle?.classList.remove("menu-open");
+		#menu-toggle.menu-open:hover::before {
+			background-color: rgba(255, 255, 255, 0.3);
+		}
 
-		// Ocultar cruz de cerrar independiente
-		menuClose?.classList.add("opacity-0", "pointer-events-none");
-		menuClose?.classList.remove("opacity-100");
-	};
+		/* Estado hamburguesa - líneas separadas */
+		#menu-line-1 {
+			transform: translateY(-6px);
+		}
 
-	// Cerrar con botón cruz
-	menuClose?.addEventListener("click", closeMenu);
+		#menu-line-2 {
+			transform: translateY(6px);
+		}
 
-	// Cerrar al hacer clic en overlay
-	menuOverlay?.addEventListener("click", closeMenu);
+		/* Estado cruz - líneas centradas y rotadas */
+		#menu-toggle.menu-open #menu-line-1 {
+			transform: translateY(0) rotate(45deg);
+			width: 1.25rem; /* 20px - más pequeña que los 28px originales */
+			height: 0.25rem; /* 4px - grosor intermedio */
+		}
 
-	// Navegación entre secciones
-	menuMainItems.forEach((item) => {
-		item.addEventListener("click", () => {
-			const section = item.getAttribute("data-section");
+		#menu-toggle.menu-open #menu-line-2 {
+			transform: translateY(0) rotate(-45deg);
+			width: 1.25rem; /* 20px - más pequeña que los 28px originales */
+			height: 0.25rem; /* 4px - grosor intermedio */
+		}
 
-			// Quitar clase active de todos los botones
-			menuMainItems.forEach((btn) => {
-				btn.classList.remove("active");
-			});
+		/* Estilo para botón activo del menú */
+		.menu-main-item.active {
+			background-color: white;
+			color: #111;
+			border-radius: 9999px;
+		}
+	</style>
 
-			// Agregar clase active al botón clickeado
-			item.classList.add("active");
+	<script>
+		import { gsap } from "gsap";
+		import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-			// Ocultar todas las secciones
-			menuContents.forEach((content) => {
-				content.classList.add("hidden");
-			});
+		gsap.registerPlugin(ScrollTrigger);
 
-			// Mostrar sección seleccionada
-			if (section) {
+		const tl = gsap.timeline({
+			ease: "power2.out",
+			scrollTrigger: {
+				scrub: 1,
+			},
+		});
+
+		tl.to("#hero-key", { duration: 1, scale: 1 })
+			.to(
+				"#hero-key-logo",
+				{
+					opacity: 0,
+				},
+				"<",
+			)
+			.to(
+				"#hero-play-button",
+				{
+					opacity: 0,
+				},
+				"<",
+			)
+			.to(
+				"#hero-footer",
+				{
+					opacity: 0,
+				},
+				"<",
+			)
+			.to(
+				"#logo-mask",
+				{
+					maskSize: "clamp(20vh, 25%, 30vh)",
+				},
+				0.15,
+			)
+			.to(
+				"#hero-key",
+				{
+					opacity: 0,
+					duration: 0.2,
+				},
+				0.4,
+			);
+
+		// Menú hamburguesa
+		const menuToggle = document.getElementById("menu-toggle");
+		const menuClose = document.getElementById("menu-close");
+		const menuPanel = document.getElementById("menu-panel");
+		const menuOverlay = document.getElementById("menu-overlay");
+		const menuMainItems = document.querySelectorAll(".menu-main-item");
+		const menuContents = document.querySelectorAll(".menu-content");
+
+		let isMenuOpen = false;
+
+		// Abrir menú
+		menuToggle?.addEventListener("click", () => {
+			isMenuOpen = true;
+			menuPanel?.classList.remove("translate-x-full");
+			menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
+			menuOverlay?.classList.add("opacity-100");
+
+			// Animar botón hamburguesa a cruz
+			menuToggle?.classList.add("menu-open");
+
+			// Mostrar cruz de cerrar independiente
+			menuClose?.classList.remove("opacity-0", "pointer-events-none");
+			menuClose?.classList.add("opacity-100");
+
+			// Mostrar primera sección por defecto
+			if (!document.querySelector(".menu-content:not(.hidden)")) {
 				document
-					.getElementById(`content-${section}`)
+					.getElementById("content-personajes")
 					?.classList.remove("hidden");
+				document
+					.querySelector('[data-section="personajes"]')
+					?.classList.add("active");
 			}
 		});
-	});
 
-	// Hover en personajes para mostrar imágenes
-	const characterLinks = document.querySelectorAll(".character-link");
-	const menuLogo = document.getElementById("menu-logo");
-	const characterImages = document.querySelectorAll(
-		"[id^='menu-image-']",
-	);
+		// Cerrar menú
+		const closeMenu = () => {
+			isMenuOpen = false;
+			menuPanel?.classList.add("translate-x-full");
+			menuOverlay?.classList.add("opacity-0", "pointer-events-none");
+			menuOverlay?.classList.remove("opacity-100");
 
-	characterLinks.forEach((link) => {
-		link.addEventListener("mouseenter", () => {
-			const character = link.getAttribute("data-character");
-			if (character) {
-				// Ocultar el logo
-				menuLogo?.classList.add("opacity-0");
+			// Volver hamburguesa
+			menuToggle?.classList.remove("menu-open");
+
+			// Ocultar cruz de cerrar independiente
+			menuClose?.classList.add("opacity-0", "pointer-events-none");
+			menuClose?.classList.remove("opacity-100");
+		};
+
+		// Cerrar con botón cruz
+		menuClose?.addEventListener("click", closeMenu);
+
+		// Cerrar al hacer clic en overlay
+		menuOverlay?.addEventListener("click", closeMenu);
+
+		// Navegación entre secciones
+		menuMainItems.forEach((item) => {
+			item.addEventListener("click", () => {
+				const section = item.getAttribute("data-section");
+
+				// Quitar clase active de todos los botones
+				menuMainItems.forEach((btn) => {
+					btn.classList.remove("active");
+				});
+
+				// Agregar clase active al botón clickeado
+				item.classList.add("active");
+
+				// Ocultar todas las secciones
+				menuContents.forEach((content) => {
+					content.classList.add("hidden");
+				});
+
+				// Mostrar sección seleccionada
+				if (section) {
+					document
+						.getElementById(`content-${section}`)
+						?.classList.remove("hidden");
+				}
+			});
+		});
+
+		// Hover en personajes para mostrar imágenes
+		const characterLinks = document.querySelectorAll(".character-link");
+		const menuLogo = document.getElementById("menu-logo");
+		const characterImages = document.querySelectorAll(
+			"[id^='menu-image-']",
+		);
+
+		characterLinks.forEach((link) => {
+			link.addEventListener("mouseenter", () => {
+				const character = link.getAttribute("data-character");
+				if (character) {
+					// Ocultar el logo
+					menuLogo?.classList.add("opacity-0");
+
+					// Ocultar todas las imágenes
+					characterImages.forEach((img) => {
+						img.classList.remove("opacity-100");
+						img.classList.add("opacity-0");
+					});
+
+					// Mostrar la imagen del personaje
+					const characterImage = document.getElementById(
+						`menu-image-${character}`,
+					);
+					if (characterImage) {
+						characterImage.classList.remove("opacity-0");
+						characterImage.classList.add("opacity-100");
+					}
+				}
+			});
+
+			link.addEventListener("mouseleave", () => {
+				// Mostrar el logo de nuevo
+				menuLogo?.classList.remove("opacity-0");
 
 				// Ocultar todas las imágenes
 				characterImages.forEach((img) => {
 					img.classList.remove("opacity-100");
 					img.classList.add("opacity-0");
 				});
-
-				// Mostrar la imagen del personaje
-				const characterImage = document.getElementById(
-					`menu-image-${character}`,
-				);
-				if (characterImage) {
-					characterImage.classList.remove("opacity-0");
-					characterImage.classList.add("opacity-100");
-				}
-			}
-		});
-
-		link.addEventListener("mouseleave", () => {
-			// Mostrar el logo de nuevo
-			menuLogo?.classList.remove("opacity-0");
-
-			// Ocultar todas las imágenes
-			characterImages.forEach((img) => {
-				img.classList.remove("opacity-100");
-				img.classList.add("opacity-0");
 			});
 		});
-	});
-</script>
+	</script>
+</Layout>

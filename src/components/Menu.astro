@@ -1,0 +1,571 @@
+---
+import LogoVI from "@/assets/logo-vi.svg";
+import LogoMenu from "@/assets/logo-menu.svg";
+
+// Personajes
+import JasonImg from "@/assets/jason.webp";
+import LuciaImg from "@/assets/lucia.webp";
+import CalImg from "@/assets/cal.webp";
+import BoobieImg from "@/assets/boobie.webp";
+import DrequanImg from "@/assets/drequan.webp";
+import DimezImg from "@/assets/dimez.webp";
+import RaulImg from "@/assets/raul.webp";
+import BrianImg from "@/assets/brian.webp";
+
+// Lugares
+import ViceCityImg from "@/assets/vice-city.webp";
+import PortGellhornImg from "@/assets/port-gellhorn.webp";
+import LeonidaKeysImg from "@/assets/leonida-keys.webp";
+import GrassRiversImg from "@/assets/grassrivers.webp";
+import KalagaImg from "@/assets/kalaga.webp";
+import AmbrosiaImg from "@/assets/ambrosia.webp";
+---
+
+<!-- Overlay -->
+<div
+	id="menu-overlay"
+	class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 z-40"
+>
+</div>
+
+<!-- Logo VI grande (izquierda del menú) -->
+<div
+	id="menu-logo-container"
+	class="fixed top-0 left-0 h-screen w-1/2 opacity-0 pointer-events-none transition-opacity duration-700 z-45 flex items-center justify-center"
+>
+	<div class="relative w-full h-full">
+		<img
+			id="menu-bg-image"
+			src="/menu-bg.jpg"
+			alt=""
+			class="absolute inset-0 w-full h-full object-cover"
+		/>
+		<div class="absolute inset-0 bg-black/40"></div>
+		<div class="absolute inset-0 flex items-center justify-center">
+			<div class="relative">
+				<LogoVI class="text-white w-96 drop-shadow-2xl" />
+				<span
+					class="absolute top-0 right-0 text-white text-xs font-bold translate-x-4 -translate-y-2"
+					>TM</span
+				>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Botón de cerrar independiente (cruz) -->
+<button
+	id="menu-close"
+	class="fixed top-16 right-20 w-12 h-12 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-[100] bg-white/20 hover:bg-white/30 rounded-full group cursor-pointer"
+>
+	<div class="relative w-5 h-5 flex items-center justify-center">
+		<span
+			class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute rotate-45"
+		></span>
+		<span
+			class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute -rotate-45"
+		></span>
+	</div>
+</button>
+
+<nav
+	id="menu-panel"
+	class="fixed top-0 right-0 h-screen w-full translate-x-full transition-transform duration-700 ease-in-out z-50 flex"
+>
+	<!-- Izquierda -->
+	<div class="w-1/2 relative overflow-hidden">
+		<div
+			class="absolute inset-0"
+			style="background: linear-gradient(135deg, #286074 0%, #296175 9%, #316376 18%, #3c6679 27%, #47687b 36%, #566779 45%, #5a5f6d 54%, #585362 63%, #554757 72%, #52404f 81%, #523c47 90%, #523c47 100%)"
+		>
+		</div>
+
+		<div class="absolute inset-0">
+			<!-- Personajes -->
+			<img
+				id="menu-image-jason"
+				src={JasonImg.src}
+				alt="Jason Duval"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-lucia"
+				src={LuciaImg.src}
+				alt="Lucia Caminos"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-cal"
+				src={CalImg.src}
+				alt="Cal Hampton"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-boobie"
+				src={BoobieImg.src}
+				alt="Boobie Ike"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-drequan"
+				src={DrequanImg.src}
+				alt="Dre'Quan Priest"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-dimez"
+				src={DimezImg.src}
+				alt="Real Dimez"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-raul"
+				src={RaulImg.src}
+				alt="Raul Bautista"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-brian"
+				src={BrianImg.src}
+				alt="Brian Heder"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+
+			<!-- Lugares -->
+			<img
+				id="menu-image-vice-city"
+				src={ViceCityImg.src}
+				alt="Vice City"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-port-gellhorn"
+				src={PortGellhornImg.src}
+				alt="Port Gellhorn"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-leonida-keys"
+				src={LeonidaKeysImg.src}
+				alt="Leonida Keys"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-grassrivers"
+				src={GrassRiversImg.src}
+				alt="Grass Rivers"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-kalaga"
+				src={KalagaImg.src}
+				alt="Kalaga"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+			<img
+				id="menu-image-ambrosia"
+				src={AmbrosiaImg.src}
+				alt="Ambrosia"
+				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+			/>
+		</div>
+
+		<div
+			id="menu-logo"
+			class="absolute inset-0 flex items-center justify-center transition-opacity duration-500"
+		>
+			<LogoMenu
+				class="text-white w-full max-w-[380px] px-12"
+				style="filter: drop-shadow(0 0 40px rgba(255,255,255,0.4)) drop-shadow(0 0 150px rgba(255,255,255,0.1));"
+			/>
+		</div>
+	</div>
+
+	<!-- Derecha -->
+	<div
+		class="w-1/2 px-12 pt-16 pb-8 flex flex-col"
+		style="background: linear-gradient(223.17deg, #1b1828 0%, #191725 20%, #161520 40%, #15141f 60%, #13131a 80%, #111117 100%)"
+	>
+		<ul class="flex gap-0 mb-12">
+			<li>
+				<button
+					data-section="personajes"
+					class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
+					>Personajes</button
+				>
+			</li>
+			<li>
+				<button
+					data-section="lugares"
+					class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
+					>Lugares</button
+				>
+			</li>
+			<li>
+				<button
+					data-section="traileres"
+					class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
+					>Tráilers</button
+				>
+			</li>
+			<li>
+				<button
+					data-section="descargas"
+					class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
+					>Descargas</button
+				>
+			</li>
+		</ul>
+
+		<div class="flex-1 flex items-center overflow-y-auto">
+			<div id="content-personajes" class="menu-content hidden">
+				<ul class="flex flex-col gap-2">
+					<li>
+						<a
+							href="#"
+							data-character="jason"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Jason Duval</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="lucia"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Lucia Caminos</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="cal"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Cal Hampton</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="boobie"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Boobie Ike</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="drequan"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Dre'Quan Priest</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="dimez"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Real Dimez</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="raul"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Raul Bautista</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="brian"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Brian Heder</a
+						>
+					</li>
+				</ul>
+			</div>
+
+			<div id="content-lugares" class="menu-content hidden">
+				<ul class="flex flex-col gap-2">
+					<li>
+						<a
+							href="#"
+							data-character="vice-city"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Vice City</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="leonida-keys"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Cayos de Leonida</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="grassrivers"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Grassrivers</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="port-gellhorn"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Port Gellhorn</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="ambrosia"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Ambrosia</a
+						>
+					</li>
+					<li>
+						<a
+							href="#"
+							data-character="kalaga"
+							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+							>Monte Kalaga</a
+						>
+					</li>
+				</ul>
+			</div>
+
+			<div id="content-traileres" class="menu-content hidden">
+				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
+					Tráilers
+				</h3>
+				<div class="flex flex-col gap-4">
+					<a
+						href="#"
+						class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+					>
+						<div class="flex items-start justify-between mb-2">
+							<span class="text-sm font-semibold text-yellow-100"
+								>2:47</span
+							>
+							<span
+								class="text-xs bg-pink-500/80 px-2 py-1 rounded-full"
+								>Nuevo</span
+							>
+						</div>
+						<h4 class="text-white font-semibold mb-1">
+							Grand Theft Auto VI - Tráiler 2
+						</h4>
+						<p class="text-sm text-white/60">6 de mayo de 2025</p>
+					</a>
+					<a
+						href="#"
+						class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+					>
+						<div class="flex items-start justify-between mb-2">
+							<span class="text-sm font-semibold text-yellow-100"
+								>1:31</span
+							>
+						</div>
+						<h4 class="text-white font-semibold mb-1">
+							Grand Theft Auto VI - Tráiler 1
+						</h4>
+						<p class="text-sm text-white/60">
+							4 de diciembre de 2023
+						</p>
+					</a>
+				</div>
+			</div>
+
+			<div id="content-descargas" class="menu-content hidden">
+				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
+					Descargas
+				</h3>
+				<div class="flex flex-col gap-4">
+					<a
+						href="#"
+						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+						><h4 class="text-white font-semibold text-lg">
+							Vídeos
+						</h4></a
+					>
+					<a
+						href="#"
+						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+						><h4 class="text-white font-semibold text-lg">
+							Capturas de pantalla
+						</h4></a
+					>
+					<a
+						href="#"
+						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
+						><h4 class="text-white font-semibold text-lg">
+							Arte y fondos de pantalla
+						</h4></a
+					>
+					<button
+						class="mt-2 w-full py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold transition-all duration-300 border border-white/20 hover:border-yellow-100/50"
+						>Ver todas las descargas</button
+					>
+				</div>
+			</div>
+		</div>
+
+		<footer class="mt-8 pt-6 flex justify-between items-center">
+			<button
+				class="flex items-center gap-3 text-white hover:text-white/70 transition-colors duration-300 font-semibold cursor-pointer"
+			>
+				<svg
+					class="size-4"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<circle
+						cx="12"
+						cy="12"
+						r="10"
+						stroke="currentColor"
+						stroke-width="2"></circle>
+					<path
+						d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+						stroke="currentColor"
+						stroke-width="2"></path>
+				</svg>
+				<span>Español</span>
+				<svg
+					class="size-4"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M18 15l-6-6-6 6"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</button>
+			<button
+				class="flex items-center gap-3 text-white hover:text-white/70 transition-colors duration-300 font-semibold cursor-pointer"
+			>
+				<span>Movimiento</span>
+				<svg
+					class="size-4"
+					viewBox="0 0 24 24"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M18 15l-6-6-6 6"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</button>
+		</footer>
+	</div>
+</nav>
+
+<style>
+	/* Estilo para botón activo del menú */
+	.menu-main-item.active {
+		background-color: white;
+		color: #111;
+		border-radius: 9999px;
+	}
+</style>
+
+<script>
+	const menuToggle = document.getElementById("menu-toggle");
+	const menuClose = document.getElementById("menu-close");
+	const menuPanel = document.getElementById("menu-panel");
+	const menuOverlay = document.getElementById("menu-overlay");
+	const menuMainItems = document.querySelectorAll(".menu-main-item");
+	const menuContents = document.querySelectorAll(".menu-content");
+	const characterLinks = document.querySelectorAll(".character-link");
+	const menuLogo = document.getElementById("menu-logo");
+	const characterImages = document.querySelectorAll("[id^='menu-image-']");
+
+	let isMenuOpen = false;
+
+	menuToggle?.addEventListener("click", () => {
+		isMenuOpen = true;
+		menuPanel?.classList.remove("translate-x-full");
+		menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
+		menuOverlay?.classList.add("opacity-100");
+		menuToggle?.classList.add("menu-open");
+		menuClose?.classList.remove("opacity-0", "pointer-events-none");
+		menuClose?.classList.add("opacity-100");
+		if (!document.querySelector(".menu-content:not(.hidden)")) {
+			document
+				.getElementById("content-personajes")
+				?.classList.remove("hidden");
+			document
+				.querySelector('[data-section="personajes"]')
+				?.classList.add("active");
+		}
+	});
+
+	const closeMenu = () => {
+		isMenuOpen = false;
+		menuPanel?.classList.add("translate-x-full");
+		menuOverlay?.classList.add("opacity-0", "pointer-events-none");
+		menuOverlay?.classList.remove("opacity-100");
+		menuToggle?.classList.remove("menu-open");
+		menuClose?.classList.add("opacity-0", "pointer-events-none");
+		menuClose?.classList.remove("opacity-100");
+	};
+
+	menuClose?.addEventListener("click", closeMenu);
+	menuOverlay?.addEventListener("click", closeMenu);
+
+	menuMainItems.forEach((item) => {
+		item.addEventListener("click", () => {
+			const section = item.getAttribute("data-section");
+			menuMainItems.forEach((btn) => btn.classList.remove("active"));
+			item.classList.add("active");
+			menuContents.forEach((content) => content.classList.add("hidden"));
+			if (section) {
+				document
+					.getElementById(`content-${section}`)
+					?.classList.remove("hidden");
+			}
+		});
+	});
+
+	characterLinks.forEach((link) => {
+		link.addEventListener("mouseenter", () => {
+			const character = link.getAttribute("data-character");
+			if (character) {
+				menuLogo?.classList.add("opacity-0");
+				characterImages.forEach((img) => {
+					img.classList.remove("opacity-100");
+					img.classList.add("opacity-0");
+				});
+				const characterImage = document.getElementById(
+					`menu-image-${character}`,
+				);
+				if (characterImage) {
+					characterImage.classList.remove("opacity-0");
+					characterImage.classList.add("opacity-100");
+				}
+			}
+		});
+
+		link.addEventListener("mouseleave", () => {
+			menuLogo?.classList.remove("opacity-0");
+			characterImages.forEach((img) => {
+				img.classList.remove("opacity-100");
+				img.classList.add("opacity-0");
+			});
+		});
+	});
+</script>
