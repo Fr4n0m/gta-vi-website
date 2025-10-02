@@ -308,7 +308,9 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			</ul>
 
 			<!-- Contenedor centrado para el contenido dinámico -->
-			<div class="flex-1 flex items-center overflow-y-auto">
+			<div
+				class="flex-1 flex items-center overflow-y-auto hide-scrollbar"
+			>
 				<div id="content-personajes" class="menu-content hidden">
 					<ul class="flex flex-col gap-2">
 						<li>
@@ -532,15 +534,15 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 						<!-- Card Vídeos -->
 						<a
 							href="#"
-							class="transition-all duration-300 border-0 hover:border-2 border-yellow-100 w-full relative overflow-x-hidden overflow-y-auto group h-[200px]"
+							class="transition-all duration-300 border-0 hover:border-3 border-yellow-100 w-full relative overflow-x-hidden overflow-y-auto hide-scrollbar group h-[200px]"
 							style={`background-image:url(${VideosBg.src}); background-size: contain; background-repeat: no-repeat; background-position: center;`}
 						>
 							<span
-								class="absolute inset-0 bg-black/40 pointer-events-none"
+								class="absolute inset-0 bg-black/20 pointer-events-none"
 							></span>
 							<div class="relative z-[1] p-6">
 								<h4
-									class="text-yellow-100 uppercase font-narrow text-xl"
+									class="text-yellow-100 uppercase font-narrow text-3xl"
 								>
 									Vídeos
 								</h4>
@@ -550,15 +552,15 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 						<!-- Card Capturas -->
 						<a
 							href="#"
-							class="transition-all duration-300 border-0 hover:border-2 border-yellow-100 w-full relative overflow-x-hidden overflow-y-auto group h-[200px]"
+							class="transition-all duration-300 border-0 hover:border-3 border-yellow-100 w-full relative overflow-x-hidden overflow-y-auto hide-scrollbar group h-[200px]"
 							style={`background-image:url(${ScreenshotsBg.src}); background-size: contain; background-repeat: no-repeat; background-position: center;`}
 						>
 							<span
-								class="absolute inset-0 bg-black/40 pointer-events-none"
+								class="absolute inset-0 bg-black/20 pointer-events-none"
 							></span>
 							<div class="relative z-[1] p-6">
 								<h4
-									class="text-yellow-100 uppercase font-narrow text-xl"
+									class="text-yellow-100 uppercase font-narrow text-3xl"
 								>
 									Capturas de pantalla
 								</h4>
@@ -568,15 +570,15 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 						<!-- Card Arte -->
 						<a
 							href="#"
-							class="transition-all duration-300 border-0 hover:border-2 border-yellow-100 w-full relative overflow-x-hidden overflow-y-auto group h-[200px]"
+							class="transition-all duration-300 border-0 hover:border-3 border-yellow-100 w-full relative overflow-x-hidden overflow-y-auto hide-scrollbar group h-[200px]"
 							style={`background-image:url(${ArtworkBg.src}); background-size: contain; background-repeat: no-repeat; background-position: center;`}
 						>
 							<span
-								class="absolute inset-0 bg-black/40 pointer-events-none"
+								class="absolute inset-0 bg-black/20 pointer-events-none"
 							></span>
 							<div class="relative z-[1] p-6">
 								<h4
-									class="text-yellow-100 uppercase font-narrow text-xl"
+									class="text-yellow-100 uppercase font-narrow text-3xl"
 								>
 									Arte y fondos de pantalla
 								</h4>
@@ -585,7 +587,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 
 						<!-- Botón ver todas -->
 						<button
-							class="bg-white/5 text-white rounded-full font-semibold w-fit px-6 py-3 hover:bg-white/10 transition-all duration-300 flex justify-center items-center gap-2"
+							class="bg-white/5 text-white rounded-full font-semibold w-fit px-6 py-3 hover:bg-white/10 transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer"
 						>
 							Ver todas las descargas
 							<ArrowIcon class="size-4" />
@@ -658,6 +660,14 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 	</nav>
 
 	<style>
+		/* Oculta visualmente las barras de scroll pero mantiene el desplazamiento */
+		.hide-scrollbar::-webkit-scrollbar {
+			display: none;
+		}
+		.hide-scrollbar {
+			scrollbar-width: none; /* Firefox */
+			-ms-overflow-style: none; /* IE/Edge legacy */
+		}
 		#logo-mask {
 			background: white;
 			mask-image: url("/logo-stack.svg");
