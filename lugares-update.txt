@@ -1,0 +1,53 @@
+<!-- Nav secundario - Lugares -->
+<div id="content-lugares" class="menu-content hidden">
+	<ul class="flex flex-col gap-2">
+		<li>
+			<a
+				href="#"
+				data-character="vice-city"
+				class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+				>Vice City</a
+			>
+		</li>
+		<li>
+			<a
+				href="#"
+				data-character="leonida-keys"
+				class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+				>Cayos de Leonida</a
+			>
+		</li>
+		<li>
+			<a
+				href="#"
+				data-character="grassrivers"
+				class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+				>Grassrivers</a
+			>
+		</li>
+		<li>
+			<a
+				href="#"
+				data-character="port-gellhorn"
+				class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+				>Port Gellhorn</a
+			>
+		</li>
+		<li>
+			<a
+				href="#"
+				data-character="kalaga"
+				class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+				>Kalaga</a
+			>
+		</li>
+		<li>
+			<a
+				href="#"
+				data-character="ambrosia"
+				class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
+				>Ambrosia</a
+			>
+		</li>
+	</ul>
+</div>
