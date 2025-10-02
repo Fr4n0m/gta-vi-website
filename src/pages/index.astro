@@ -155,7 +155,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 		class="fixed top-0 right-0 h-screen w-full translate-x-full transition-transform duration-700 ease-in-out z-50 flex"
 	>
 		<!-- Logo VI grande con imagen de fondo (mitad izquierda del panel) -->
-		<div class="w-1/2 relative overflow-hidden">
+		<div id="menu-left-panel" class="w-1/2 relative overflow-hidden opacity-0">
 			<!-- Fondo con degradado azul a rosa oscuro -->
 			<div
 				class="absolute inset-0"
@@ -170,49 +170,49 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 					id="menu-image-jason"
 					src={JasonImg.src}
 					alt="Jason Duval"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-lucia"
 					src={LuciaImg.src}
 					alt="Lucia Caminos"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-cal"
 					src={CalImg.src}
 					alt="Cal Hampton"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-boobie"
 					src={BoobieImg.src}
 					alt="Boobie Ike"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-drequan"
 					src={DrequanImg.src}
 					alt="Dre'Quan Priest"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-dimez"
 					src={DimezImg.src}
 					alt="Real Dimez"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-raul"
 					src={RaulImg.src}
 					alt="Raul Bautista"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-brian"
 					src={BrianImg.src}
 					alt="Brian Heder"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 
 				<!-- Imágenes de lugares -->
@@ -220,44 +220,44 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 					id="menu-image-vice-city"
 					src={ViceCityImg.src}
 					alt="Vice City"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-port-gellhorn"
 					src={PortGellhornImg.src}
 					alt="Port Gellhorn"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-leonida-keys"
 					src={LeonidaKeysImg.src}
 					alt="Leonida Keys"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-grassrivers"
 					src={GrassRiversImg.src}
 					alt="Grass Rivers"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-kalaga"
 					src={KalagaImg.src}
 					alt="Kalaga"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 				<img
 					id="menu-image-ambrosia"
 					src={AmbrosiaImg.src}
 					alt="Ambrosia"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
+					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
 				/>
 			</div>
 
 			<!-- Logo VI SVG (por defecto) -->
 			<div
 				id="menu-logo"
-				class="absolute inset-0 flex items-center justify-center transition-opacity duration-500"
+				class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-1000 ease-in-out"
 			>
 				<LogoMenu
 					class="text-white w-full max-w-[380px] px-12"
@@ -524,7 +524,10 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 				</div>
 
 				<!-- Nav secundario - Descargas -->
-				<div id="content-descargas" class="menu-content hidden w-full flex items-start h-full">
+				<div
+					id="content-descargas"
+					class="menu-content hidden w-full flex items-start h-full"
+				>
 					<div
 						class="flex flex-col gap-4 items-center w-full max-w-2xl mx-auto py-4"
 					>
@@ -534,7 +537,9 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 							class="block w-full relative overflow-hidden group"
 						>
 							<!-- Contenedor de la imagen con altura fija -->
-							<div class="relative w-full h-[200px] overflow-visible">
+							<div
+								class="relative w-full h-[200px] overflow-visible"
+							>
 								<!-- Imagen de fondo -->
 								<img
 									src={VideosBg.src}
@@ -549,8 +554,18 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 								<span
 									class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
 								></span>
+								<!-- Icono flecha -->
+								<div
+									class="absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center z-10 transition-all duration-500 arrow-bg sm:bottom-5 sm:right-5 md:bottom-6 md:right-6"
+								>
+									<ArrowIcon
+										class="w-4 h-4 transition-all duration-500 arrow-icon"
+									/>
+								</div>
 								<!-- Contenido -->
-								<div class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10">
+								<div
+									class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10"
+								>
 									<h4
 										class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
 									>
@@ -566,7 +581,9 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 							class="block w-full relative overflow-hidden group"
 						>
 							<!-- Contenedor de la imagen con altura fija -->
-							<div class="relative w-full h-[200px] overflow-visible">
+							<div
+								class="relative w-full h-[200px] overflow-visible"
+							>
 								<!-- Imagen de fondo -->
 								<img
 									src={ScreenshotsBg.src}
@@ -581,8 +598,18 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 								<span
 									class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
 								></span>
+								<!-- Icono flecha -->
+								<div
+									class="absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center z-10 transition-all duration-500 arrow-bg sm:bottom-5 sm:right-5 md:bottom-6 md:right-6"
+								>
+									<ArrowIcon
+										class="w-4 h-4 transition-all duration-500 arrow-icon"
+									/>
+								</div>
 								<!-- Contenido -->
-								<div class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10">
+								<div
+									class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10"
+								>
 									<h4
 										class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
 									>
@@ -598,7 +625,9 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 							class="block w-full relative overflow-hidden group"
 						>
 							<!-- Contenedor de la imagen con altura fija -->
-							<div class="relative w-full h-[200px] overflow-visible">
+							<div
+								class="relative w-full h-[200px] overflow-visible"
+							>
 								<!-- Imagen de fondo -->
 								<img
 									src={ArtworkBg.src}
@@ -613,8 +642,18 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 								<span
 									class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
 								></span>
+								<!-- Icono flecha -->
+								<div
+									class="absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center z-10 transition-all duration-500 arrow-bg sm:bottom-5 sm:right-5 md:bottom-6 md:right-6"
+								>
+									<ArrowIcon
+										class="w-4 h-4 transition-all duration-500 arrow-icon"
+									/>
+								</div>
 								<!-- Contenido -->
-								<div class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10">
+								<div
+									class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10"
+								>
 									<h4
 										class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
 									>
@@ -754,6 +793,23 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			color: #111;
 			border-radius: 9999px;
 		}
+
+		/* Estilos para el icono de flecha en las cards */
+		.arrow-bg {
+			background-color: #36364e;
+		}
+
+		.arrow-icon {
+			color: #cc96bc;
+		}
+
+		.group:hover .arrow-bg {
+			background-color: #fef3c7; /* yellow-100 */
+		}
+
+		.group:hover .arrow-icon {
+			color: #36364e;
+		}
 	</style>
 
 	<script>
@@ -811,6 +867,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 		const menuToggle = document.getElementById("menu-toggle");
 		const menuClose = document.getElementById("menu-close");
 		const menuPanel = document.getElementById("menu-panel");
+		const menuLeftPanel = document.getElementById("menu-left-panel");
 		const menuOverlay = document.getElementById("menu-overlay");
 		const menuMainItems = document.querySelectorAll(".menu-main-item");
 		const menuContents = document.querySelectorAll(".menu-content");
@@ -823,6 +880,19 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			menuPanel?.classList.remove("translate-x-full");
 			menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
 			menuOverlay?.classList.add("opacity-100");
+
+			// Fade in del panel izquierdo después de 400ms
+			setTimeout(() => {
+				menuLeftPanel?.classList.remove("opacity-0");
+				menuLeftPanel?.classList.add("opacity-100");
+				menuLeftPanel?.style.setProperty("transition", "opacity 600ms ease-in-out");
+				
+				// Fade in del logo después de que aparezca el panel (600ms adicionales)
+				setTimeout(() => {
+					menuLogo?.classList.remove("opacity-0");
+					menuLogo?.classList.add("opacity-100");
+				}, 600);
+			}, 400);
 
 			// Animar botón hamburguesa a cruz
 			menuToggle?.classList.add("menu-open");
@@ -845,9 +915,23 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 		// Cerrar menú
 		const closeMenu = () => {
 			isMenuOpen = false;
-			menuPanel?.classList.add("translate-x-full");
-			menuOverlay?.classList.add("opacity-0", "pointer-events-none");
-			menuOverlay?.classList.remove("opacity-100");
+			
+			// Ocultar logo primero
+			menuLogo?.classList.remove("opacity-100");
+			menuLogo?.classList.add("opacity-0");
+			
+			// Fade out del panel izquierdo después
+			setTimeout(() => {
+				menuLeftPanel?.classList.remove("opacity-100");
+				menuLeftPanel?.classList.add("opacity-0");
+			}, 200);
+			
+			// Después de que el fade out termine, cerrar el panel derecho
+			setTimeout(() => {
+				menuPanel?.classList.add("translate-x-full");
+				menuOverlay?.classList.add("opacity-0", "pointer-events-none");
+				menuOverlay?.classList.remove("opacity-100");
+			}, 600);
 
 			// Volver hamburguesa
 			menuToggle?.classList.remove("menu-open");
@@ -896,12 +980,21 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 		const characterImages = document.querySelectorAll(
 			"[id^='menu-image-']",
 		);
+		
+		let logoTimeout = null;
 
 		characterLinks.forEach((link) => {
 			link.addEventListener("mouseenter", () => {
 				const character = link.getAttribute("data-character");
 				if (character) {
-					// Ocultar el logo
+					// Cancelar cualquier timeout pendiente del logo
+					if (logoTimeout) {
+						clearTimeout(logoTimeout);
+						logoTimeout = null;
+					}
+					
+					// Ocultar el logo inmediatamente (sin delay)
+					menuLogo?.classList.remove("opacity-100");
 					menuLogo?.classList.add("opacity-0");
 
 					// Ocultar todas las imágenes
@@ -922,14 +1015,17 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			});
 
 			link.addEventListener("mouseleave", () => {
-				// Mostrar el logo de nuevo
-				menuLogo?.classList.remove("opacity-0");
-
-				// Ocultar todas las imágenes
+				// Ocultar todas las imágenes inmediatamente
 				characterImages.forEach((img) => {
 					img.classList.remove("opacity-100");
 					img.classList.add("opacity-0");
 				});
+				
+				// Mostrar el logo después de un delay (para que aparezca después de que desaparezca la imagen)
+				logoTimeout = setTimeout(() => {
+					menuLogo?.classList.remove("opacity-0");
+					menuLogo?.classList.add("opacity-100");
+				}, 600);
 			});
 		});
 	</script>
