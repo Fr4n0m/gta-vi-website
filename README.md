@@ -167,7 +167,6 @@ Todos los elementos escalan proporcionalmente:
 ## 📝 Créditos
 
 ### Desarrollo
-- Desarrollo Frontend: [Tu Nombre/Organización]
 - Diseño UI/UX: Inspirado en el material oficial de Rockstar Games
 
 ### Recursos
