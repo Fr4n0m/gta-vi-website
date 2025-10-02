@@ -5,6 +5,7 @@ import HeroKeyLogo from "@/assets/hero-key-logo.webp";
 import HeroKeyBackground from "@/assets/hero-key-background.webp";
 import LogoVI from "@/assets/logo-vi.svg";
 import PlayButtonIcon from "@/assets/play-button.svg";
+import PlayOverlayIcon from "@/assets/play-whitoutbg.svg";
 import LogoCutted from "@/assets/logo-cutted.svg";
 import LogoMenu from "@/assets/logo-menu.svg";
 
@@ -435,13 +436,25 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 							href="#"
 							class="flex gap-4 block bg-[#232329] transition-all duration-300 bg-red hover:bg-[#29292e]"
 						>
-							<div class="w-1/2">
+							<div class="w-1/2 relative">
 								<img
 									src="/src/assets/t2.webp"
 									alt="Trailer 2"
 								/>
+								<!-- Play overlay -->
 								<span
-									class="aboslute p-1 bg-[#232329] text-sm font-narrow font-semibold text-white"
+									class="absolute inset-0 flex items-center justify-center pointer-events-none"
+								>
+									<span
+										class="inline-flex items-center justify-center rounded-full p-4 bg-black/30 backdrop-blur-md"
+									>
+										<PlayOverlayIcon
+											class="size-4 text-white"
+										/>
+									</span>
+								</span>
+								<span
+									class="absolute bottom-2 left-2 px-2 py-0.5 bg-[#232329]/70 text-md font-narrow font-semibold text-white"
 									>2:47</span
 								>
 							</div>
@@ -467,13 +480,25 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 							href="#"
 							class="flex gap-4 block bg-[#232329] transition-all duration-300 bg-red hover:bg-[#29292e]"
 						>
-							<div class="w-1/2">
+							<div class="w-1/2 relative">
 								<img
 									src="/src/assets/t1.webp"
 									alt="Trailer 2"
 								/>
+								<!-- Play overlay -->
 								<span
-									class="aboslute p-1 bg-[#232329] text-sm font-narrow font-semibold text-white"
+									class="absolute inset-0 flex items-center justify-center pointer-events-none"
+								>
+									<span
+										class="inline-flex items-center justify-center rounded-full p-4 bg-black/30 backdrop-blur-md"
+									>
+										<PlayOverlayIcon
+											class="size-4 text-white"
+										/>
+									</span>
+								</span>
+								<span
+									class="absolute bottom-2 left-2 px-2 py-0.5 bg-[#232329]/70 text-md font-narrow font-semibold text-white"
 									>1:31</span
 								>
 							</div>
