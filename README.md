@@ -200,18 +200,6 @@ Este proyecto está creado únicamente con **fines educativos y de demostración
 
 Este proyecto no reclama ningún derecho sobre el contenido de GTA VI y puede ser eliminado bajo petición de los titulares de los derechos.
 
-## 📧 Contacto
-
-Si tienes preguntas sobre este proyecto educativo o representas a Rockstar Games/Take-Two Interactive:
-- 📧 Email: [tu-email]
-- 🐙 GitHub: [tu-perfil-github]
-
-## 🙏 Agradecimientos
-
-- Rockstar Games por crear el universo de Grand Theft Auto
-- La comunidad de desarrollo web por las herramientas open-source
-- Astro, Tailwind CSS y GSAP por sus excelentes frameworks
-
 ---
 
 **Recuerda**: Este es un proyecto educativo sin ánimo de lucro creado para practicar y demostrar habilidades de desarrollo web. No está afiliado ni respaldado por Rockstar Games o Take-Two Interactive.
