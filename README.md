@@ -1,5 +1,7 @@
 # 🎮 GTA VI - Fan Website
 
+![gta-vi-website-1](https://github.com/user-attachments/assets/418f8662-5102-4859-942b-a95588ee879b)
+
 > **Proyecto educativo sin fines comerciales**
 
 Un sitio web tributo no oficial de Grand Theft Auto VI, desarrollado con fines educativos para demostrar capacidades de desarrollo web moderno, animaciones avanzadas y diseño responsive.
@@ -16,6 +18,8 @@ Un sitio web tributo no oficial de Grand Theft Auto VI, desarrollado con fines e
 
 Si representas a Rockstar Games o Take-Two Interactive y deseas que este proyecto sea eliminado, por favor contacta y será retirado inmediatamente.
 
+![gta-vi-website-2](https://github.com/user-attachments/assets/e98d0f2c-5260-4812-9ea0-354fdaf0a9e6)
+
 ## 🚀 Características
 
 ### Diseño y UI/UX
@@ -26,6 +30,8 @@ Si representas a Rockstar Games o Take-Two Interactive y deseas que este proyect
 - ⚡ Animaciones con GSAP (GreenSock Animation Platform)
 - 🎬 Sección de tráilers con previews interactivos
 - 📥 Sección de descargas con cards animadas
+  
+![gta-vi-website-3](https://github.com/user-attachments/assets/a335599e-8111-4709-8729-621d0a0c843a)
 
 ### Tecnologías Utilizadas
 - **[Astro](https://astro.build)** - Framework web moderno para sitios estáticos
@@ -40,6 +46,8 @@ Si representas a Rockstar Games o Take-Two Interactive y deseas que este proyect
 - 📦 Componentes modulares y reutilizables
 - 🎨 Sistema de diseño consistente con variables CSS
 - 🖱️ Efectos hover avanzados con transformaciones CSS
+
+![gta-vi-website-4](https://github.com/user-attachments/assets/d968855b-232b-4ec3-b817-d535278efbef)
 
 ## 📋 Estructura del Proyecto
 
