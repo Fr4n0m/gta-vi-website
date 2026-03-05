@@ -1,835 +1,12 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-
-import HeroKeyLogo from "@/assets/hero-key-logo.webp";
-import HeroKeyBackground from "@/assets/hero-key-background.webp";
-import LogoVI from "@/assets/logo-vi.svg";
-import PlayButtonIcon from "@/assets/play-button.svg";
-import PlayOverlayIcon from "@/assets/play-whitoutbg.svg";
-import LogoCutted from "@/assets/logo-cutted.svg";
-import LogoMenu from "@/assets/logo-menu.svg";
-import ArrowIcon from "@/assets/arrow.svg";
-import VideosBg from "@/assets/videos-desktop.webp";
-import ScreenshotsBg from "@/assets/screenshots-desktop.webp";
-import ArtworkBg from "@/assets/artwork-desktop.webp";
-import Trailer1Img from "@/assets/t1.webp";
-import Trailer2Img from "@/assets/t2.webp";
-
-// Importar imágenes de personajes
-import JasonImg from "@/assets/jason.webp";
-import LuciaImg from "@/assets/lucia.webp";
-import CalImg from "@/assets/cal.webp";
-import BoobieImg from "@/assets/boobie.webp";
-import DrequanImg from "@/assets/drequan.webp";
-import DimezImg from "@/assets/dimez.webp";
-import RaulImg from "@/assets/raul.webp";
-import BrianImg from "@/assets/brian.webp";
-
-// Importar imágenes de lugares
-import ViceCityImg from "@/assets/vice-city.webp";
-import PortGellhornImg from "@/assets/port-gellhorn.webp";
-import LeonidaKeysImg from "@/assets/leonida-keys.webp";
-import GrassRiversImg from "@/assets/grassrivers.webp";
-import KalagaImg from "@/assets/kalaga.webp";
-import AmbrosiaImg from "@/assets/ambrosia.webp";
+import Hero from "@/components/Hero.astro";
+import Menu from "@/components/Menu.astro";
 ---
 
 <Layout>
-	<div id="logo-mask" class="fixed top-0 w-full h-screen">
-		<section>
-			<picture
-				id="hero-key"
-				class="h-screen scale-125 block overflow-hidden fixed"
-			>
-				<img
-					id="hero-key-logo"
-					src={HeroKeyLogo.src}
-					class="absolute w-full h-full object-cover"
-					alt="GTA VI Key Logo"
-				/>
-				<img
-					id="hero-key-background"
-					src={HeroKeyBackground.src}
-					class="w-full h-full object-cover"
-					alt="GTA VI Key Background"
-				/>
-			</picture>
-		</section>
-	</div>
-
-	<div
-		class="fixed flex flex-col items-center justify-between h-screen px-20 py-16 w-full xl:px-24 xl:py-20 2xl:px-32 2xl:py-24"
-	>
-		<header class="flex justify-between w-full">
-			<a href="/" aria-label="Ir a inicio">
-				<LogoVI
-					class="size-11 text-white hover:text-yellow-100 transition-colors duration-500 cursor-pointer xl:size-12 2xl:size-14"
-				/>
-			</a>
-			<button
-				id="menu-toggle"
-				class="flex items-center justify-center group hover:cursor-pointer relative w-12 h-12 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 z-[100] xl:w-14 xl:h-14 2xl:w-16 2xl:h-16"
-				aria-label="Abrir menú"
-				aria-controls="menu-panel"
-				aria-expanded="false"
-				type="button"
-			>
-				<div
-					class="relative w-7 h-7 flex items-center justify-center xl:w-8 xl:h-8 2xl:w-9 2xl:h-9"
-				>
-					<span
-						id="menu-line-1"
-						class="w-7 h-1.5 bg-white group-hover:bg-yellow-100 transition-all duration-500 absolute xl:w-8 2xl:w-9"
-					></span>
-					<span
-						id="menu-line-2"
-						class="w-7 h-1.5 bg-white group-hover:bg-yellow-100 transition-all duration-500 absolute xl:w-8 2xl:w-9"
-					></span>
-				</div>
-			</button>
-		</header>
-
-		<button class="inset-0 m-auto inline-block">
-			<PlayButtonIcon
-				id="hero-play-button"
-				class="text-white m-auto size-28 mt-10 backdrop-blur-3xl rounded-full hover:scale-110 transition-transform duration-500 cursor-pointer xl:size-32 2xl:size-40"
-			/>
-		</button>
-
-		<footer
-			id="hero-footer"
-			class="absolute bottom-8 m-auto xl:bottom-10 2xl:bottom-12"
-		>
-			<LogoCutted
-				class="text-white w-38 drop-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000] xl:w-44 2xl:w-52"
-			/>
-			<span
-				class="absolute uppercase tracking-[6px] whitespace-nowrap text-center top-[51px] font-bold text-shadow-[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000] left-1/2 -translate-x-1/2 xl:top-[47px] xl:text-lg 2xl:top-[47px] 2xl:text-xl 2xl:tracking-[8px]"
-				>Ver el tráiler 2</span
-			>
-		</footer>
-	</div>
-
-	<button
-		id="menu-close"
-		class="fixed top-16 right-20 w-12 h-12 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-[100] bg-white/10 hover:bg-white/20 rounded-full group cursor-pointer xl:top-20 xl:right-24 xl:w-14 xl:h-14 2xl:top-24 2xl:right-32 2xl:w-16 2xl:h-16"
-		type="button"
-	>
-		<div
-			class="relative w-5 h-5 flex items-center justify-center xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
-		>
-			<span
-				class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute rotate-45 xl:w-5 2xl:w-6"
-			></span>
-			<span
-				class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute -rotate-45 xl:w-5 2xl:w-6"
-			></span>
-		</div>
-	</button>
-
-	<!-- Menú desplegable -->
-	<div
-		id="menu-overlay"
-		class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 z-40"
-	>
-	</div>
-
-	<nav
-		id="menu-panel"
-		class="fixed top-0 right-0 h-screen w-full translate-x-full transition-transform duration-700 ease-in-out z-50 flex"
-	>
-		<!-- Logo VI grande con imagen de fondo (mitad izquierda del panel) -->
-		<div
-			id="menu-left-panel"
-			class="w-1/2 relative overflow-hidden opacity-0"
-		>
-			<!-- Fondo con degradado azul a rosa oscuro -->
-			<div
-				class="absolute inset-0"
-				style="background: linear-gradient(135deg, #286074 0%, #296175 9%, #316376 18%, #3c6679 27%, #47687b 36%, #566779 45%, #5a5f6d 54%, #585362 63%, #554757 72%, #52404f 81%, #523c47 90%, #523c47 100%)"
-			>
-			</div>
-
-			<!-- Contenedor para las imágenes -->
-			<div class="absolute inset-0">
-				<!-- Imágenes de personajes -->
-				<img
-					id="menu-image-jason"
-					src={JasonImg.src}
-					alt="Jason Duval"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-lucia"
-					src={LuciaImg.src}
-					alt="Lucia Caminos"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-cal"
-					src={CalImg.src}
-					alt="Cal Hampton"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-boobie"
-					src={BoobieImg.src}
-					alt="Boobie Ike"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-drequan"
-					src={DrequanImg.src}
-					alt="Dre'Quan Priest"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-dimez"
-					src={DimezImg.src}
-					alt="Real Dimez"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-raul"
-					src={RaulImg.src}
-					alt="Raul Bautista"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-brian"
-					src={BrianImg.src}
-					alt="Brian Heder"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-
-				<!-- Imágenes de lugares -->
-				<img
-					id="menu-image-vice-city"
-					src={ViceCityImg.src}
-					alt="Vice City"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-port-gellhorn"
-					src={PortGellhornImg.src}
-					alt="Port Gellhorn"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-leonida-keys"
-					src={LeonidaKeysImg.src}
-					alt="Leonida Keys"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-grassrivers"
-					src={GrassRiversImg.src}
-					alt="Grass Rivers"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-kalaga"
-					src={KalagaImg.src}
-					alt="Kalaga"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-				<img
-					id="menu-image-ambrosia"
-					src={AmbrosiaImg.src}
-					alt="Ambrosia"
-					class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
-				/>
-			</div>
-
-			<!-- Logo VI SVG (por defecto) -->
-			<div
-				id="menu-logo"
-				class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-1000 ease-in-out"
-			>
-				<LogoMenu
-					class="text-white w-full max-w-[380px] px-12 xl:max-w-[440px] 2xl:max-w-[520px]"
-					style="filter: drop-shadow(0 0 40px rgba(255,255,255,0.4)) drop-shadow(0 0 150px rgba(255,255,255,0.1));"
-				/>
-			</div>
-		</div>
-
-		<!-- Contenido del menú (mitad derecha del panel) -->
-		<div
-			class="w-1/2 px-6 pt-16 pb-8 flex flex-col sm:px-8 md:px-10 lg:px-12 xl:px-14 xl:pt-20 xl:pb-10 2xl:px-16 2xl:pt-24 2xl:pb-12"
-			style="background: linear-gradient(223.17deg, #1b1828 0%, #191725 20%, #161520 40%, #15141f 60%, #13131a 80%, #111117 100%)"
-		>
-			<!-- Nav principal horizontal -->
-			<ul
-				class="flex h-12 xl:h-14 2xl:h-16 items-center gap-1.5 md:gap-2 lg:gap-3 xl:gap-4 mb-8 md:mb-10 xl:mb-14 2xl:mb-16"
-			>
-				<li>
-					<button
-						data-section="personajes"
-						class="menu-main-item text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold whitespace-nowrap leading-none"
-					>
-						Personajes
-					</button>
-				</li>
-				<li>
-					<button
-						data-section="lugares"
-						class="menu-main-item text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold whitespace-nowrap leading-none"
-					>
-						Lugares
-					</button>
-				</li>
-				<li>
-					<button
-						data-section="traileres"
-						class="menu-main-item text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold whitespace-nowrap leading-none"
-					>
-						Tráilers
-					</button>
-				</li>
-				<li>
-					<button
-						data-section="descargas"
-						class="menu-main-item text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold whitespace-nowrap leading-none"
-					>
-						Descargas
-					</button>
-				</li>
-			</ul>
-
-			<!-- Contenedor centrado para el contenido dinámico -->
-			<div
-				class="flex-1 flex items-center overflow-y-auto hide-scrollbar"
-			>
-				<div id="content-personajes" class="menu-content hidden">
-					<ul class="flex flex-col gap-2 xl:gap-3 2xl:gap-4">
-						<li>
-							<a
-								href="#"
-								data-character="jason"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Jason Duval</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="lucia"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Lucia Caminos</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="cal"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Cal Hampton</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="boobie"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Boobie Ike</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="drequan"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Dre'Quan Priest</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="dimez"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Real Dimez</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="raul"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Raul Bautista</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="brian"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Brian Heder</a
-							>
-						</li>
-					</ul>
-				</div>
-
-				<!-- Nav secundario - Lugares -->
-				<div id="content-lugares" class="menu-content hidden">
-					<ul class="flex flex-col gap-2 xl:gap-3 2xl:gap-4">
-						<li>
-							<a
-								href="#"
-								data-character="vice-city"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Vice City</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="leonida-keys"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Cayos de Leonida</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="grassrivers"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Grassrivers</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="port-gellhorn"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Port Gellhorn</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="ambrosia"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Ambrosia</a
-							>
-						</li>
-						<li>
-							<a
-								href="#"
-								data-character="kalaga"
-								class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
-								>Monte Kalaga</a
-							>
-						</li>
-					</ul>
-				</div>
-
-				<!-- Nav secundario - Tráilers -->
-				<div id="content-traileres" class="menu-content hidden w-full">
-					<div class="flex flex-col gap-4 xl:gap-5 2xl:gap-6">
-						<!-- Card Tráiler 2 -->
-						<a
-							href="#"
-							class="flex gap-4 block bg-[#232329] transition-all duration-300 bg-red hover:bg-[#29292e] xl:gap-5 2xl:gap-6"
-						>
-							<div class="w-1/2 relative">
-								<img
-									src={Trailer2Img.src}
-									alt="Trailer 2"
-								/>
-								<!-- Play overlay -->
-								<span
-									class="absolute inset-0 flex items-center justify-center pointer-events-none"
-								>
-									<span
-										class="inline-flex items-center justify-center rounded-full p-4 bg-black/30 backdrop-blur-md xl:p-5 2xl:p-6"
-									>
-										<PlayOverlayIcon
-											class="size-4 text-white xl:size-5 2xl:size-6"
-										/>
-									</span>
-								</span>
-								<span
-									class="absolute bottom-2 left-2 px-2 py-0.5 bg-[#232329]/70 text-md font-narrow font-semibold text-white xl:bottom-3 xl:left-3 xl:px-3 xl:py-1 xl:text-lg 2xl:bottom-4 2xl:left-4 2xl:px-4 2xl:py-1.5 2xl:text-xl"
-									>2:47</span
-								>
-							</div>
-
-							<div
-								class="w-1/2 flex flex-col justify-center items-start gap-2 xl:gap-3 2xl:gap-4"
-							>
-								<span
-									class="text-md w-fit font-narrow uppercase text-black px-2 bg-yellow-100 xl:text-lg xl:px-3 2xl:text-xl 2xl:px-4"
-									>Nuevo</span
-								>
-								<h4
-									class="text-white text-md font-semibold xl:text-lg 2xl:text-2xl"
-								>
-									Grand Theft Auto VI - Tráiler 2
-								</h4>
-								<p
-									class="text-md text-white/60 xl:text-lg 2xl:text-xl"
-								>
-									6 de mayo de 2025
-								</p>
-							</div>
-						</a>
-
-						<!-- Card Tráiler 1 -->
-						<a
-							href="#"
-							class="flex gap-4 block bg-[#232329] transition-all duration-300 bg-red hover:bg-[#29292e] xl:gap-5 2xl:gap-6"
-						>
-							<div class="w-1/2 relative">
-								<img
-									src={Trailer1Img.src}
-									alt="Trailer 1"
-								/>
-								<!-- Play overlay -->
-								<span
-									class="absolute inset-0 flex items-center justify-center pointer-events-none"
-								>
-									<span
-										class="inline-flex items-center justify-center rounded-full p-4 bg-black/30 backdrop-blur-md xl:p-5 2xl:p-6"
-									>
-										<PlayOverlayIcon
-											class="size-4 text-white xl:size-5 2xl:size-6"
-										/>
-									</span>
-								</span>
-								<span
-									class="absolute bottom-2 left-2 px-2 py-0.5 bg-[#232329]/70 text-md font-narrow font-semibold text-white xl:bottom-3 xl:left-3 xl:px-3 xl:py-1 xl:text-lg 2xl:bottom-4 2xl:left-4 2xl:px-4 2xl:py-1.5 2xl:text-xl"
-									>1:31</span
-								>
-							</div>
-
-							<div
-								class="w-1/2 flex flex-col justify-center items-start gap-2 xl:gap-3 2xl:gap-4"
-							>
-								<h4
-									class="text-white text-md font-semibold xl:text-lg 2xl:text-2xl"
-								>
-									Grand Theft Auto VI - Tráiler 1
-								</h4>
-								<p
-									class="text-md text-white/60 xl:text-lg 2xl:text-xl"
-								>
-									4 de diciembre de 2023
-								</p>
-							</div>
-						</a>
-					</div>
-				</div>
-
-				<!-- Nav secundario - Descargas -->
-				<div
-					id="content-descargas"
-					class="menu-content hidden w-full flex items-start h-full"
-				>
-					<div
-						class="flex flex-col gap-4 items-center w-full max-w-2xl mx-auto py-4"
-					>
-						<!-- Card Vídeos -->
-						<a
-							href="#"
-							class="block w-full relative overflow-hidden group"
-						>
-							<!-- Contenedor de la imagen con altura fija -->
-							<div
-								class="relative w-full h-[200px] overflow-visible"
-							>
-								<!-- Imagen de fondo -->
-								<img
-									src={VideosBg.src}
-									alt="Vídeos"
-									class="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:brightness-125 group-hover:scale-[0.99]"
-								/>
-								<!-- Overlay oscuro -->
-								<span
-									class="absolute inset-0 bg-black/20 pointer-events-none"
-								></span>
-								<!-- Borde en hover -->
-								<span
-									class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
-								></span>
-								<!-- Icono flecha -->
-								<div
-									class="absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center z-10 transition-all duration-500 arrow-bg sm:bottom-5 sm:right-5 md:bottom-6 md:right-6"
-								>
-									<ArrowIcon
-										class="w-4 h-4 transition-all duration-500 arrow-icon"
-									/>
-								</div>
-								<!-- Contenido -->
-								<div
-									class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10"
-								>
-									<h4
-										class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
-									>
-										Vídeos
-									</h4>
-								</div>
-							</div>
-						</a>
-
-						<!-- Card Capturas -->
-						<a
-							href="#"
-							class="block w-full relative overflow-hidden group"
-						>
-							<!-- Contenedor de la imagen con altura fija -->
-							<div
-								class="relative w-full h-[200px] overflow-visible"
-							>
-								<!-- Imagen de fondo -->
-								<img
-									src={ScreenshotsBg.src}
-									alt="Capturas de pantalla"
-									class="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:brightness-125 group-hover:scale-[0.99]"
-								/>
-								<!-- Overlay oscuro -->
-								<span
-									class="absolute inset-0 bg-black/20 pointer-events-none"
-								></span>
-								<!-- Borde en hover -->
-								<span
-									class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
-								></span>
-								<!-- Icono flecha -->
-								<div
-									class="absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center z-10 transition-all duration-500 arrow-bg sm:bottom-5 sm:right-5 md:bottom-6 md:right-6"
-								>
-									<ArrowIcon
-										class="w-4 h-4 transition-all duration-500 arrow-icon"
-									/>
-								</div>
-								<!-- Contenido -->
-								<div
-									class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10"
-								>
-									<h4
-										class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
-									>
-										Capturas de pantalla
-									</h4>
-								</div>
-							</div>
-						</a>
-
-						<!-- Card Arte -->
-						<a
-							href="#"
-							class="block w-full relative overflow-hidden group"
-						>
-							<!-- Contenedor de la imagen con altura fija -->
-							<div
-								class="relative w-full h-[200px] overflow-visible"
-							>
-								<!-- Imagen de fondo -->
-								<img
-									src={ArtworkBg.src}
-									alt="Arte y fondos de pantalla"
-									class="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:brightness-125 group-hover:scale-[0.99]"
-								/>
-								<!-- Overlay oscuro -->
-								<span
-									class="absolute inset-0 bg-black/20 pointer-events-none"
-								></span>
-								<!-- Borde en hover -->
-								<span
-									class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
-								></span>
-								<!-- Icono flecha -->
-								<div
-									class="absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center z-10 transition-all duration-500 arrow-bg sm:bottom-5 sm:right-5 md:bottom-6 md:right-6"
-								>
-									<ArrowIcon
-										class="w-4 h-4 transition-all duration-500 arrow-icon"
-									/>
-								</div>
-								<!-- Contenido -->
-								<div
-									class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10"
-								>
-									<h4
-										class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
-									>
-										Arte y fondos de pantalla
-									</h4>
-								</div>
-							</div>
-						</a>
-
-						<!-- Botón ver todas -->
-						<button
-							class="mt-2 bg-white/5 text-white rounded-full font-semibold w-fit px-5 sm:px-6 py-2.5 sm:py-3 hover:bg-white/10 transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer text-sm sm:text-base xl:px-7 xl:py-3.5 xl:text-lg 2xl:px-8 2xl:py-4 2xl:text-xl"
-						>
-							Ver todas las descargas
-							<ArrowIcon
-								class="size-3.5 sm:size-4 xl:size-5 2xl:size-6"
-							/>
-						</button>
-					</div>
-				</div>
-			</div>
-
-			<!-- Footer del menú -->
-			<footer
-				class="mt-8 pt-6 flex justify-between items-center xl:mt-10 xl:pt-8 2xl:mt-12 2xl:pt-10"
-			>
-				<button
-					class="flex items-center gap-3 text-white hover:text-white/70 transition-colors duration-300 font-semibold cursor-pointer xl:gap-4 xl:text-lg 2xl:gap-5 2xl:text-xl"
-				>
-					<!-- SVG del globo -->
-					<svg
-						class="size-4 xl:size-5 2xl:size-6"
-						viewBox="0 0 24 24"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<!-- Aquí irá tu SVG -->
-						<circle
-							cx="12"
-							cy="12"
-							r="10"
-							stroke="currentColor"
-							stroke-width="2"></circle>
-						<path
-							d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-							stroke="currentColor"
-							stroke-width="2"></path>
-					</svg>
-					<span>Español</span>
-					<!-- Flecha hacia arriba -->
-					<svg
-						class="size-4"
-						viewBox="0 0 24 24"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="M18 15l-6-6-6 6"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"></path>
-					</svg>
-				</button>
-				<button
-					class="flex items-center gap-3 text-white hover:text-white/70 transition-colors duration-300 font-semibold cursor-pointer xl:gap-4 xl:text-lg 2xl:gap-5 2xl:text-xl"
-				>
-					<span>Movimiento</span>
-					<!-- Flecha hacia arriba -->
-					<svg
-						class="size-4 xl:size-5 2xl:size-6"
-						viewBox="0 0 24 24"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="M18 15l-6-6-6 6"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"></path>
-					</svg>
-				</button>
-			</footer>
-		</div>
-	</nav>
-
-	<style>
-		/* Oculta visualmente las barras de scroll pero mantiene el desplazamiento */
-		.hide-scrollbar::-webkit-scrollbar {
-			display: none;
-		}
-		.hide-scrollbar {
-			scrollbar-width: none; /* Firefox */
-			-ms-overflow-style: none; /* IE/Edge legacy */
-		}
-		#logo-mask {
-			background: white;
-			mask-image: url("/logo-stack.svg");
-			mask-position: center 25%;
-			mask-repeat: no-repeat;
-			mask-size: clamp(5000vh, 3500%, 0vh);
-		}
-	</style>
-
-	<style>
-		#menu-toggle.menu-open::before {
-			content: "";
-			background-color: rgba(255, 255, 255, 0.2);
-		}
-
-		#menu-toggle.menu-open:hover::before {
-			background-color: rgba(255, 255, 255, 0.3);
-		}
-
-		/* Estado hamburguesa - líneas separadas */
-		#menu-line-1 {
-			transform: translateY(-6px);
-		}
-
-		#menu-line-2 {
-			transform: translateY(6px);
-		}
-
-		/* Estado cruz - líneas centradas y rotadas */
-		#menu-toggle.menu-open #menu-line-1 {
-			transform: translateY(0) rotate(45deg);
-			width: 1.25rem; /* 20px - más pequeña que los 28px originales */
-			height: 0.25rem; /* 4px - grosor intermedio */
-		}
-
-		#menu-toggle.menu-open #menu-line-2 {
-			transform: translateY(0) rotate(-45deg);
-			width: 1.25rem; /* 20px - más pequeña que los 28px originales */
-			height: 0.25rem; /* 4px - grosor intermedio */
-		}
-
-		/* Estilo para botón activo del menú */
-		.menu-main-item.active {
-			background-color: white;
-			color: #111;
-			border-radius: 9999px;
-		}
-
-		/* Estilos para el icono de flecha en las cards */
-		.arrow-bg {
-			background-color: #36364e;
-		}
-
-		.arrow-icon {
-			color: #cc96bc;
-		}
-
-		.group:hover .arrow-bg {
-			background-color: #fef3c7; /* yellow-100 */
-		}
-
-		.group:hover .arrow-icon {
-			color: #36364e;
-		}
-
-		/* Tipografías fluidas del menú para mantener proporciones 4K y ajustar en pantallas menores */
-		#menu-panel .menu-main-item {
-			font-size: clamp(0.95rem, 1.05vw, 1.875rem);
-			padding-block: clamp(0.5rem, 0.65vw, 1.5rem);
-			padding-inline: clamp(0.65rem, 0.9vw, 1.75rem);
-		}
-
-		#menu-panel #content-personajes .character-link,
-		#menu-panel #content-lugares .character-link {
-			font-size: clamp(2.8rem, 6.5vh, 8.5rem);
-			line-height: 0.92;
-		}
-
-		#menu-panel #content-personajes ul,
-		#menu-panel #content-lugares ul {
-			gap: clamp(0.28rem, 0.7vh, 1rem);
-		}
-	</style>
+	<Hero />
+	<Menu />
 
 	<script>
 		import { gsap } from "gsap";
@@ -837,14 +14,15 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 
 		gsap.registerPlugin(ScrollTrigger);
 
-		const tl = gsap.timeline({
+		const heroTimeline = gsap.timeline({
 			ease: "power2.out",
 			scrollTrigger: {
 				scrub: 1,
 			},
 		});
 
-		tl.to("#hero-key", { duration: 1, scale: 1 })
+		heroTimeline
+			.to("#hero-key", { duration: 1, scale: 1 })
 			.to(
 				"#hero-key-logo",
 				{
@@ -882,7 +60,6 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 				0.4,
 			);
 
-		// Menú hamburguesa
 		const menuToggle = document.getElementById("menu-toggle");
 		const menuClose = document.getElementById("menu-close");
 		const menuPanel = document.getElementById("menu-panel");
@@ -890,8 +67,14 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 		const menuOverlay = document.getElementById("menu-overlay");
 		const menuMainItems = document.querySelectorAll(".menu-main-item");
 		const menuContents = document.querySelectorAll(".menu-content");
+		const characterLinks = document.querySelectorAll(".character-link");
+		const menuLogo = document.getElementById("menu-logo");
+		const characterImages = document.querySelectorAll(
+			"[id^='menu-image-']",
+		);
 
 		let isMenuOpen = false;
+		let logoTimeout = 0;
 
 		const openMenu = () => {
 			isMenuOpen = true;
@@ -899,7 +82,6 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
 			menuOverlay?.classList.add("opacity-100");
 
-			// Fade in del panel izquierdo después de 400ms
 			setTimeout(() => {
 				menuLeftPanel?.classList.remove("opacity-0");
 				menuLeftPanel?.classList.add("opacity-100");
@@ -908,23 +90,19 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 					"opacity 600ms ease-in-out",
 				);
 
-				// Fade in del logo después de que aparezca el panel (600ms adicionales)
 				setTimeout(() => {
 					menuLogo?.classList.remove("opacity-0");
 					menuLogo?.classList.add("opacity-100");
 				}, 600);
 			}, 400);
 
-			// Animar botón hamburguesa a cruz
 			menuToggle?.classList.add("menu-open");
 			menuToggle?.setAttribute("aria-label", "Cerrar menú");
 			menuToggle?.setAttribute("aria-expanded", "true");
 
-			// Mostrar botón de cierre (X)
 			menuClose?.classList.remove("opacity-0", "pointer-events-none");
 			menuClose?.classList.add("opacity-100");
 
-			// Mostrar primera sección por defecto
 			if (!document.querySelector(".menu-content:not(.hidden)")) {
 				document
 					.getElementById("content-personajes")
@@ -935,38 +113,31 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			}
 		};
 
-		// Cerrar menú
 		const closeMenu = () => {
 			isMenuOpen = false;
 
-			// Ocultar logo primero
 			menuLogo?.classList.remove("opacity-100");
 			menuLogo?.classList.add("opacity-0");
 
-			// Fade out del panel izquierdo después
 			setTimeout(() => {
 				menuLeftPanel?.classList.remove("opacity-100");
 				menuLeftPanel?.classList.add("opacity-0");
 			}, 200);
 
-			// Después de que el fade out termine, cerrar el panel derecho
 			setTimeout(() => {
 				menuPanel?.classList.add("translate-x-full");
 				menuOverlay?.classList.add("opacity-0", "pointer-events-none");
 				menuOverlay?.classList.remove("opacity-100");
 			}, 600);
 
-			// Volver hamburguesa
 			menuToggle?.classList.remove("menu-open");
 			menuToggle?.setAttribute("aria-label", "Abrir menú");
 			menuToggle?.setAttribute("aria-expanded", "false");
 
-			// Ocultar botón de cierre (X)
 			menuClose?.classList.add("opacity-0", "pointer-events-none");
 			menuClose?.classList.remove("opacity-100");
 		};
 
-		// Abrir con el botón principal del header
 		menuToggle?.addEventListener("click", () => {
 			if (isMenuOpen) {
 				return;
@@ -974,31 +145,23 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			openMenu();
 		});
 
-		// Cerrar con la X del menú desplegable
 		menuClose?.addEventListener("click", closeMenu);
-
-		// Cerrar al hacer clic en overlay
 		menuOverlay?.addEventListener("click", closeMenu);
 
-		// Navegación entre secciones
 		menuMainItems.forEach((item) => {
 			item.addEventListener("click", () => {
 				const section = item.getAttribute("data-section");
 
-				// Quitar clase active de todos los botones
 				menuMainItems.forEach((btn) => {
 					btn.classList.remove("active");
 				});
 
-				// Agregar clase active al botón clickeado
 				item.classList.add("active");
 
-				// Ocultar todas las secciones
 				menuContents.forEach((content) => {
 					content.classList.add("hidden");
 				});
 
-				// Mostrar sección seleccionada
 				if (section) {
 					document
 						.getElementById(`content-${section}`)
@@ -1007,36 +170,23 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			});
 		});
 
-		// Hover en personajes para mostrar imágenes
-		const characterLinks = document.querySelectorAll(".character-link");
-		const menuLogo = document.getElementById("menu-logo");
-		const characterImages = document.querySelectorAll(
-			"[id^='menu-image-']",
-		);
-
-		let logoTimeout = null;
-
 		characterLinks.forEach((link) => {
 			link.addEventListener("mouseenter", () => {
 				const character = link.getAttribute("data-character");
 				if (character) {
-					// Cancelar cualquier timeout pendiente del logo
 					if (logoTimeout) {
 						clearTimeout(logoTimeout);
-						logoTimeout = null;
+						logoTimeout = 0;
 					}
 
-					// Ocultar el logo inmediatamente (sin delay)
 					menuLogo?.classList.remove("opacity-100");
 					menuLogo?.classList.add("opacity-0");
 
-					// Ocultar todas las imágenes
 					characterImages.forEach((img) => {
 						img.classList.remove("opacity-100");
 						img.classList.add("opacity-0");
 					});
 
-					// Mostrar la imagen del personaje
 					const characterImage = document.getElementById(
 						`menu-image-${character}`,
 					);
@@ -1048,14 +198,12 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			});
 
 			link.addEventListener("mouseleave", () => {
-				// Ocultar todas las imágenes inmediatamente
 				characterImages.forEach((img) => {
 					img.classList.remove("opacity-100");
 					img.classList.add("opacity-0");
 				});
 
-				// Mostrar el logo después de un delay (para que aparezca después de que desaparezca la imagen)
-				logoTimeout = setTimeout(() => {
+				logoTimeout = window.setTimeout(() => {
 					menuLogo?.classList.remove("opacity-0");
 					menuLogo?.classList.add("opacity-100");
 				}, 600);

@@ -1,7 +1,12 @@
 ---
 import LogoMenu from "@/assets/logo-menu.svg";
-
-// Personajes
+import PlayOverlayIcon from "@/assets/play-whitoutbg.svg";
+import ArrowIcon from "@/assets/arrow.svg";
+import VideosBg from "@/assets/videos-desktop.webp";
+import ScreenshotsBg from "@/assets/screenshots-desktop.webp";
+import ArtworkBg from "@/assets/artwork-desktop.webp";
+import Trailer1Img from "@/assets/t1.webp";
+import Trailer2Img from "@/assets/t2.webp";
 import JasonImg from "@/assets/jason.webp";
 import LuciaImg from "@/assets/lucia.webp";
 import CalImg from "@/assets/cal.webp";
@@ -10,428 +15,337 @@ import DrequanImg from "@/assets/drequan.webp";
 import DimezImg from "@/assets/dimez.webp";
 import RaulImg from "@/assets/raul.webp";
 import BrianImg from "@/assets/brian.webp";
-
-// Lugares
 import ViceCityImg from "@/assets/vice-city.webp";
 import PortGellhornImg from "@/assets/port-gellhorn.webp";
 import LeonidaKeysImg from "@/assets/leonida-keys.webp";
 import GrassRiversImg from "@/assets/grassrivers.webp";
 import KalagaImg from "@/assets/kalaga.webp";
 import AmbrosiaImg from "@/assets/ambrosia.webp";
+
+const mainSections = [
+	{ id: "personajes", label: "Personajes" },
+	{ id: "lugares", label: "Lugares" },
+	{ id: "traileres", label: "Tráilers" },
+	{ id: "descargas", label: "Descargas" },
+];
+
+const characters = [
+	{ slug: "jason", label: "Jason Duval", alt: "Jason Duval", image: JasonImg },
+	{ slug: "lucia", label: "Lucia Caminos", alt: "Lucia Caminos", image: LuciaImg },
+	{ slug: "cal", label: "Cal Hampton", alt: "Cal Hampton", image: CalImg },
+	{ slug: "boobie", label: "Boobie Ike", alt: "Boobie Ike", image: BoobieImg },
+	{
+		slug: "drequan",
+		label: "Dre'Quan Priest",
+		alt: "Dre'Quan Priest",
+		image: DrequanImg,
+	},
+	{ slug: "dimez", label: "Real Dimez", alt: "Real Dimez", image: DimezImg },
+	{ slug: "raul", label: "Raul Bautista", alt: "Raul Bautista", image: RaulImg },
+	{ slug: "brian", label: "Brian Heder", alt: "Brian Heder", image: BrianImg },
+];
+
+const places = [
+	{ slug: "vice-city", label: "Vice City", alt: "Vice City", image: ViceCityImg },
+	{
+		slug: "leonida-keys",
+		label: "Cayos de Leonida",
+		alt: "Leonida Keys",
+		image: LeonidaKeysImg,
+	},
+	{ slug: "grassrivers", label: "Grassrivers", alt: "Grass Rivers", image: GrassRiversImg },
+	{
+		slug: "port-gellhorn",
+		label: "Port Gellhorn",
+		alt: "Port Gellhorn",
+		image: PortGellhornImg,
+	},
+	{ slug: "ambrosia", label: "Ambrosia", alt: "Ambrosia", image: AmbrosiaImg },
+	{ slug: "kalaga", label: "Monte Kalaga", alt: "Kalaga", image: KalagaImg },
+];
+
+const placePreviews = [
+	{ slug: "vice-city", alt: "Vice City", image: ViceCityImg },
+	{ slug: "port-gellhorn", alt: "Port Gellhorn", image: PortGellhornImg },
+	{ slug: "leonida-keys", alt: "Leonida Keys", image: LeonidaKeysImg },
+	{ slug: "grassrivers", alt: "Grass Rivers", image: GrassRiversImg },
+	{ slug: "kalaga", alt: "Kalaga", image: KalagaImg },
+	{ slug: "ambrosia", alt: "Ambrosia", image: AmbrosiaImg },
+];
+
+const trailers = [
+	{
+		title: "Grand Theft Auto VI - Tráiler 2",
+		date: "6 de mayo de 2025",
+		duration: "2:47",
+		image: Trailer2Img,
+		alt: "Trailer 2",
+		isNew: true,
+	},
+	{
+		title: "Grand Theft Auto VI - Tráiler 1",
+		date: "4 de diciembre de 2023",
+		duration: "1:31",
+		image: Trailer1Img,
+		alt: "Trailer 1",
+		isNew: false,
+	},
+];
+
+const downloads = [
+	{ title: "Vídeos", alt: "Vídeos", image: VideosBg },
+	{
+		title: "Capturas de pantalla",
+		alt: "Capturas de pantalla",
+		image: ScreenshotsBg,
+	},
+	{
+		title: "Arte y fondos de pantalla",
+		alt: "Arte y fondos de pantalla",
+		image: ArtworkBg,
+	},
+];
+
+const previewImages = [...characters, ...placePreviews];
 ---
 
-<!-- Overlay -->
-<div
-	id="menu-overlay"
-	class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 z-40"
->
-</div>
-
-<!-- Botón de cerrar independiente (cruz) -->
 <button
 	id="menu-close"
-	class="fixed top-16 right-20 w-12 h-12 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-[100] bg-white/20 hover:bg-white/30 rounded-full group cursor-pointer"
+	class="fixed top-16 right-20 w-12 h-12 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-[100] bg-white/10 hover:bg-white/20 rounded-full group cursor-pointer xl:top-20 xl:right-24 xl:w-14 xl:h-14 2xl:top-24 2xl:right-32 2xl:w-16 2xl:h-16"
+	type="button"
 >
-	<div class="relative w-5 h-5 flex items-center justify-center">
+	<div class="relative w-5 h-5 flex items-center justify-center xl:w-6 xl:h-6 2xl:w-7 2xl:h-7">
 		<span
-			class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute rotate-45"
+			class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute rotate-45 xl:w-5 2xl:w-6"
 		></span>
 		<span
-			class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute -rotate-45"
+			class="w-4 h-1 bg-white group-hover:bg-yellow-100 transition-all duration-300 absolute -rotate-45 xl:w-5 2xl:w-6"
 		></span>
 	</div>
 </button>
+
+<div
+	id="menu-overlay"
+	class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 z-40"
+></div>
 
 <nav
 	id="menu-panel"
 	class="fixed top-0 right-0 h-screen w-full translate-x-full transition-transform duration-700 ease-in-out z-50 flex"
 >
-	<!-- Izquierda -->
-	<div class="w-1/2 relative overflow-hidden">
+	<div id="menu-left-panel" class="w-1/2 relative overflow-hidden opacity-0">
 		<div
 			class="absolute inset-0"
 			style="background: linear-gradient(135deg, #286074 0%, #296175 9%, #316376 18%, #3c6679 27%, #47687b 36%, #566779 45%, #5a5f6d 54%, #585362 63%, #554757 72%, #52404f 81%, #523c47 90%, #523c47 100%)"
-		>
-		</div>
+		></div>
 
 		<div class="absolute inset-0">
-			<!-- Personajes -->
-			<img
-				id="menu-image-jason"
-				src={JasonImg.src}
-				alt="Jason Duval"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-lucia"
-				src={LuciaImg.src}
-				alt="Lucia Caminos"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-cal"
-				src={CalImg.src}
-				alt="Cal Hampton"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-boobie"
-				src={BoobieImg.src}
-				alt="Boobie Ike"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-drequan"
-				src={DrequanImg.src}
-				alt="Dre'Quan Priest"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-dimez"
-				src={DimezImg.src}
-				alt="Real Dimez"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-raul"
-				src={RaulImg.src}
-				alt="Raul Bautista"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-brian"
-				src={BrianImg.src}
-				alt="Brian Heder"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-
-			<!-- Lugares -->
-			<img
-				id="menu-image-vice-city"
-				src={ViceCityImg.src}
-				alt="Vice City"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-port-gellhorn"
-				src={PortGellhornImg.src}
-				alt="Port Gellhorn"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-leonida-keys"
-				src={LeonidaKeysImg.src}
-				alt="Leonida Keys"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-grassrivers"
-				src={GrassRiversImg.src}
-				alt="Grass Rivers"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-kalaga"
-				src={KalagaImg.src}
-				alt="Kalaga"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
-			<img
-				id="menu-image-ambrosia"
-				src={AmbrosiaImg.src}
-				alt="Ambrosia"
-				class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-500"
-			/>
+			{
+				previewImages.map((item) => (
+					<img
+						id={`menu-image-${item.slug}`}
+						src={item.image.src}
+						alt={item.alt}
+						class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000 ease-in-out"
+					/>
+				))
+			}
 		</div>
 
 		<div
 			id="menu-logo"
-			class="absolute inset-0 flex items-center justify-center transition-opacity duration-500"
+			class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-1000 ease-in-out"
 		>
 			<LogoMenu
-				class="text-white w-full max-w-[380px] px-12"
+				class="text-white w-full max-w-[380px] px-12 xl:max-w-[440px] 2xl:max-w-[520px]"
 				style="filter: drop-shadow(0 0 40px rgba(255,255,255,0.4)) drop-shadow(0 0 150px rgba(255,255,255,0.1));"
 			/>
 		</div>
 	</div>
 
-	<!-- Derecha -->
 	<div
-		class="w-1/2 px-12 pt-16 pb-8 flex flex-col"
+		class="w-1/2 px-6 pt-16 pb-8 flex flex-col sm:px-8 md:px-10 lg:px-12 xl:px-14 xl:pt-20 xl:pb-10 2xl:px-16 2xl:pt-24 2xl:pb-12"
 		style="background: linear-gradient(223.17deg, #1b1828 0%, #191725 20%, #161520 40%, #15141f 60%, #13131a 80%, #111117 100%)"
 	>
-		<ul class="flex gap-0 mb-12">
-			<li>
-				<button
-					data-section="personajes"
-					class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
-					>Personajes</button
-				>
-			</li>
-			<li>
-				<button
-					data-section="lugares"
-					class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
-					>Lugares</button
-				>
-			</li>
-			<li>
-				<button
-					data-section="traileres"
-					class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
-					>Tráilers</button
-				>
-			</li>
-			<li>
-				<button
-					data-section="descargas"
-					class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold"
-					>Descargas</button
-				>
-			</li>
+		<ul
+			class="flex h-12 xl:h-14 2xl:h-16 items-center gap-1.5 md:gap-2 lg:gap-3 xl:gap-4 mb-8 md:mb-10 xl:mb-14 2xl:mb-16"
+		>
+			{
+				mainSections.map((section) => (
+					<li>
+						<button
+							data-section={section.id}
+							class="menu-main-item text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold whitespace-nowrap leading-none"
+							type="button"
+						>
+							{section.label}
+						</button>
+					</li>
+				))
+			}
 		</ul>
 
-		<div class="flex-1 flex items-center overflow-y-auto">
+		<div class="flex-1 flex items-center overflow-y-auto hide-scrollbar">
 			<div id="content-personajes" class="menu-content hidden">
-				<ul class="flex flex-col gap-2">
-					<li>
-						<a
-							href="#"
-							data-character="jason"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Jason Duval</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="lucia"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Lucia Caminos</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="cal"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Cal Hampton</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="boobie"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Boobie Ike</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="drequan"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Dre'Quan Priest</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="dimez"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Real Dimez</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="raul"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Raul Bautista</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="brian"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Brian Heder</a
-						>
-					</li>
+				<ul class="flex flex-col gap-2 xl:gap-3 2xl:gap-4">
+					{
+						characters.map((character) => (
+							<li>
+								<a
+									href="#"
+									data-character={character.slug}
+									class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
+								>
+									{character.label}
+								</a>
+							</li>
+						))
+					}
 				</ul>
 			</div>
 
 			<div id="content-lugares" class="menu-content hidden">
-				<ul class="flex flex-col gap-2">
-					<li>
-						<a
-							href="#"
-							data-character="vice-city"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Vice City</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="leonida-keys"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Cayos de Leonida</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="grassrivers"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Grassrivers</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="port-gellhorn"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Port Gellhorn</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="ambrosia"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Ambrosia</a
-						>
-					</li>
-					<li>
-						<a
-							href="#"
-							data-character="kalaga"
-							class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow"
-							>Monte Kalaga</a
-						>
-					</li>
+				<ul class="flex flex-col gap-2 xl:gap-3 2xl:gap-4">
+					{
+						places.map((place) => (
+							<li>
+								<a
+									href="#"
+									data-character={place.slug}
+									class="character-link text-white hover:text-yellow-100 transition-colors duration-300 font-bold uppercase text-6xl font-narrow 2xl:text-8xl"
+								>
+									{place.label}
+								</a>
+							</li>
+						))
+					}
 				</ul>
 			</div>
 
-			<div id="content-traileres" class="menu-content hidden">
-				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
-					Tráilers
-				</h3>
-				<div class="flex flex-col gap-4">
-					<a
-						href="#"
-						class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-					>
-						<div class="flex items-start justify-between mb-2">
-							<span class="text-sm font-semibold text-yellow-100"
-								>2:47</span
+			<div id="content-traileres" class="menu-content hidden w-full">
+				<div class="flex flex-col gap-4 xl:gap-5 2xl:gap-6">
+					{
+						trailers.map((trailer) => (
+							<a
+								href="#"
+								class="flex gap-4 block bg-[#232329] transition-all duration-300 bg-red hover:bg-[#29292e] xl:gap-5 2xl:gap-6"
 							>
-							<span
-								class="text-xs bg-pink-500/80 px-2 py-1 rounded-full"
-								>Nuevo</span
-							>
-						</div>
-						<h4 class="text-white font-semibold mb-1">
-							Grand Theft Auto VI - Tráiler 2
-						</h4>
-						<p class="text-sm text-white/60">6 de mayo de 2025</p>
-					</a>
-					<a
-						href="#"
-						class="block p-4 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-					>
-						<div class="flex items-start justify-between mb-2">
-							<span class="text-sm font-semibold text-yellow-100"
-								>1:31</span
-							>
-						</div>
-						<h4 class="text-white font-semibold mb-1">
-							Grand Theft Auto VI - Tráiler 1
-						</h4>
-						<p class="text-sm text-white/60">
-							4 de diciembre de 2023
-						</p>
-					</a>
+								<div class="w-1/2 relative">
+									<img src={trailer.image.src} alt={trailer.alt} />
+									<span class="absolute inset-0 flex items-center justify-center pointer-events-none">
+										<span class="inline-flex items-center justify-center rounded-full p-4 bg-black/30 backdrop-blur-md xl:p-5 2xl:p-6">
+											<PlayOverlayIcon class="size-4 text-white xl:size-5 2xl:size-6" />
+										</span>
+									</span>
+									<span
+										class="absolute bottom-2 left-2 px-2 py-0.5 bg-[#232329]/70 text-md font-narrow font-semibold text-white xl:bottom-3 xl:left-3 xl:px-3 xl:py-1 xl:text-lg 2xl:bottom-4 2xl:left-4 2xl:px-4 2xl:py-1.5 2xl:text-xl"
+									>
+										{trailer.duration}
+									</span>
+								</div>
+
+								<div class="w-1/2 flex flex-col justify-center items-start gap-2 xl:gap-3 2xl:gap-4">
+									{
+										trailer.isNew && (
+											<span
+												class="text-md w-fit font-narrow uppercase text-black px-2 bg-yellow-100 xl:text-lg xl:px-3 2xl:text-xl 2xl:px-4"
+											>
+												Nuevo
+											</span>
+										)
+									}
+									<h4 class="text-white text-md font-semibold xl:text-lg 2xl:text-2xl">
+										{trailer.title}
+									</h4>
+									<p class="text-md text-white/60 xl:text-lg 2xl:text-xl">{trailer.date}</p>
+								</div>
+							</a>
+						))
+					}
 				</div>
 			</div>
 
-			<div id="content-descargas" class="menu-content hidden">
-				<h3 class="text-lg font-semibold text-yellow-100 mb-4">
-					Descargas
-				</h3>
-				<div class="flex flex-col gap-4">
-					<a
-						href="#"
-						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-						><h4 class="text-white font-semibold text-lg">
-							Vídeos
-						</h4></a
-					>
-					<a
-						href="#"
-						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-						><h4 class="text-white font-semibold text-lg">
-							Capturas de pantalla
-						</h4></a
-					>
-					<a
-						href="#"
-						class="block p-6 bg-white/5 hover:bg-white/10 rounded-lg transition-all duration-300 border border-white/10 hover:border-yellow-100/30"
-						><h4 class="text-white font-semibold text-lg">
-							Arte y fondos de pantalla
-						</h4></a
-					>
+			<div id="content-descargas" class="menu-content hidden w-full flex items-start h-full">
+				<div class="flex flex-col gap-4 items-center w-full max-w-2xl mx-auto py-4">
+					{
+						downloads.map((download) => (
+							<a href="#" class="block w-full relative overflow-hidden group">
+								<div class="relative w-full h-[200px] overflow-visible">
+									<img
+										src={download.image.src}
+										alt={download.alt}
+										class="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:brightness-125 group-hover:scale-[0.99]"
+									/>
+									<span class="absolute inset-0 bg-black/20 pointer-events-none"></span>
+									<span
+										class="absolute inset-0 border-0 group-hover:border-4 border-yellow-100 transition-all duration-700 ease-in-out pointer-events-none"
+									></span>
+									<div
+										class="absolute bottom-4 right-4 w-10 h-10 rounded-full flex items-center justify-center z-10 transition-all duration-500 arrow-bg sm:bottom-5 sm:right-5 md:bottom-6 md:right-6"
+									>
+										<ArrowIcon class="w-4 h-4 transition-all duration-500 arrow-icon" />
+									</div>
+									<div class="absolute inset-0 flex items-end p-4 sm:p-5 md:p-6 z-10">
+										<h4
+											class="text-yellow-100 uppercase font-narrow text-2xl sm:text-3xl md:text-4xl font-bold"
+										>
+											{download.title}
+										</h4>
+									</div>
+								</div>
+							</a>
+						))
+					}
+
 					<button
-						class="mt-2 w-full py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold transition-all duration-300 border border-white/20 hover:border-yellow-100/50"
-						>Ver todas las descargas</button
+						class="mt-2 bg-white/5 text-white rounded-full font-semibold w-fit px-5 sm:px-6 py-2.5 sm:py-3 hover:bg-white/10 transition-all duration-300 flex justify-center items-center gap-2 cursor-pointer text-sm sm:text-base xl:px-7 xl:py-3.5 xl:text-lg 2xl:px-8 2xl:py-4 2xl:text-xl"
+						type="button"
 					>
+						Ver todas las descargas
+						<ArrowIcon class="size-3.5 sm:size-4 xl:size-5 2xl:size-6" />
+					</button>
 				</div>
 			</div>
 		</div>
 
-		<footer class="mt-8 pt-6 flex justify-between items-center">
+		<footer
+			class="mt-8 pt-6 flex justify-between items-center xl:mt-10 xl:pt-8 2xl:mt-12 2xl:pt-10"
+		>
 			<button
-				class="flex items-center gap-3 text-white hover:text-white/70 transition-colors duration-300 font-semibold cursor-pointer"
+				class="flex items-center gap-3 text-white hover:text-white/70 transition-colors duration-300 font-semibold cursor-pointer xl:gap-4 xl:text-lg 2xl:gap-5 2xl:text-xl"
+				type="button"
 			>
 				<svg
-					class="size-4"
+					class="size-4 xl:size-5 2xl:size-6"
 					viewBox="0 0 24 24"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<circle
-						cx="12"
-						cy="12"
-						r="10"
-						stroke="currentColor"
-						stroke-width="2"></circle>
+					<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"></circle>
 					<path
 						d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
 						stroke="currentColor"
-						stroke-width="2"></path>
+						stroke-width="2"
+					></path>
 				</svg>
 				<span>Español</span>
-				<svg
-					class="size-4"
-					viewBox="0 0 24 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
+				<svg class="size-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path
 						d="M18 15l-6-6-6 6"
 						stroke="currentColor"
 						stroke-width="2"
 						stroke-linecap="round"
-						stroke-linejoin="round"></path>
+						stroke-linejoin="round"
+					></path>
 				</svg>
 			</button>
 			<button
-				class="flex items-center gap-3 text-white hover:text-white/70 transition-colors duration-300 font-semibold cursor-pointer"
+				class="flex items-center gap-3 text-white hover:text-white/70 transition-colors duration-300 font-semibold cursor-pointer xl:gap-4 xl:text-lg 2xl:gap-5 2xl:text-xl"
+				type="button"
 			>
 				<span>Movimiento</span>
 				<svg
-					class="size-4"
+					class="size-4 xl:size-5 2xl:size-6"
 					viewBox="0 0 24 24"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -441,7 +355,8 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 						stroke="currentColor"
 						stroke-width="2"
 						stroke-linecap="round"
-						stroke-linejoin="round"></path>
+						stroke-linejoin="round"
+					></path>
 				</svg>
 			</button>
 		</footer>
@@ -449,97 +364,51 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 </nav>
 
 <style>
-	/* Estilo para botón activo del menú */
+	.hide-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.hide-scrollbar {
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+	}
+
 	.menu-main-item.active {
 		background-color: white;
 		color: #111;
 		border-radius: 9999px;
 	}
+
+	.arrow-bg {
+		background-color: #36364e;
+	}
+
+	.arrow-icon {
+		color: #cc96bc;
+	}
+
+	.group:hover .arrow-bg {
+		background-color: #fef3c7;
+	}
+
+	.group:hover .arrow-icon {
+		color: #36364e;
+	}
+
+	#menu-panel .menu-main-item {
+		font-size: clamp(0.95rem, 1.05vw, 1.875rem);
+		padding-block: clamp(0.5rem, 0.65vw, 1.5rem);
+		padding-inline: clamp(0.65rem, 0.9vw, 1.75rem);
+	}
+
+	#menu-panel #content-personajes .character-link,
+	#menu-panel #content-lugares .character-link {
+		font-size: clamp(2.8rem, 6.5vh, 8.5rem);
+		line-height: 0.92;
+	}
+
+	#menu-panel #content-personajes ul,
+	#menu-panel #content-lugares ul {
+		gap: clamp(0.28rem, 0.7vh, 1rem);
+	}
 </style>
-
-<script>
-	const menuToggle = document.getElementById("menu-toggle");
-	const menuClose = document.getElementById("menu-close");
-	const menuPanel = document.getElementById("menu-panel");
-	const menuOverlay = document.getElementById("menu-overlay");
-	const menuMainItems = document.querySelectorAll(".menu-main-item");
-	const menuContents = document.querySelectorAll(".menu-content");
-	const characterLinks = document.querySelectorAll(".character-link");
-	const menuLogo = document.getElementById("menu-logo");
-	const characterImages = document.querySelectorAll("[id^='menu-image-']");
-
-	let isMenuOpen = false;
-
-	menuToggle?.addEventListener("click", () => {
-		isMenuOpen = true;
-		menuPanel?.classList.remove("translate-x-full");
-		menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
-		menuOverlay?.classList.add("opacity-100");
-		menuToggle?.classList.add("menu-open");
-		menuClose?.classList.remove("opacity-0", "pointer-events-none");
-		menuClose?.classList.add("opacity-100");
-		if (!document.querySelector(".menu-content:not(.hidden)")) {
-			document
-				.getElementById("content-personajes")
-				?.classList.remove("hidden");
-			document
-				.querySelector('[data-section="personajes"]')
-				?.classList.add("active");
-		}
-	});
-
-	const closeMenu = () => {
-		isMenuOpen = false;
-		menuPanel?.classList.add("translate-x-full");
-		menuOverlay?.classList.add("opacity-0", "pointer-events-none");
-		menuOverlay?.classList.remove("opacity-100");
-		menuToggle?.classList.remove("menu-open");
-		menuClose?.classList.add("opacity-0", "pointer-events-none");
-		menuClose?.classList.remove("opacity-100");
-	};
-
-	menuClose?.addEventListener("click", closeMenu);
-	menuOverlay?.addEventListener("click", closeMenu);
-
-	menuMainItems.forEach((item) => {
-		item.addEventListener("click", () => {
-			const section = item.getAttribute("data-section");
-			menuMainItems.forEach((btn) => btn.classList.remove("active"));
-			item.classList.add("active");
-			menuContents.forEach((content) => content.classList.add("hidden"));
-			if (section) {
-				document
-					.getElementById(`content-${section}`)
-					?.classList.remove("hidden");
-			}
-		});
-	});
-
-	characterLinks.forEach((link) => {
-		link.addEventListener("mouseenter", () => {
-			const character = link.getAttribute("data-character");
-			if (character) {
-				menuLogo?.classList.add("opacity-0");
-				characterImages.forEach((img) => {
-					img.classList.remove("opacity-100");
-					img.classList.add("opacity-0");
-				});
-				const characterImage = document.getElementById(
-					`menu-image-${character}`,
-				);
-				if (characterImage) {
-					characterImage.classList.remove("opacity-0");
-					characterImage.classList.add("opacity-100");
-				}
-			}
-		});
-
-		link.addEventListener("mouseleave", () => {
-			menuLogo?.classList.remove("opacity-0");
-			characterImages.forEach((img) => {
-				img.classList.remove("opacity-100");
-				img.classList.add("opacity-0");
-			});
-		});
-	});
-</script>
