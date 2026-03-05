@@ -12,6 +12,8 @@ import ArrowIcon from "@/assets/arrow.svg";
 import VideosBg from "@/assets/videos-desktop.webp";
 import ScreenshotsBg from "@/assets/screenshots-desktop.webp";
 import ArtworkBg from "@/assets/artwork-desktop.webp";
+import Trailer1Img from "@/assets/t1.webp";
+import Trailer2Img from "@/assets/t2.webp";
 
 // Importar imágenes de personajes
 import JasonImg from "@/assets/jason.webp";
@@ -56,7 +58,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 	</div>
 
 	<div
-		class="fixed flex flex-col items-center justify-between h-screen px-20 py-16 w-full z-30 xl:px-24 xl:py-20 2xl:px-32 2xl:py-24"
+		class="fixed flex flex-col items-center justify-between h-screen px-20 py-16 w-full xl:px-24 xl:py-20 2xl:px-32 2xl:py-24"
 	>
 		<header class="flex justify-between w-full">
 			<a href="/" aria-label="Ir a inicio">
@@ -68,6 +70,9 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 				id="menu-toggle"
 				class="flex items-center justify-center group hover:cursor-pointer relative w-12 h-12 transition-all duration-300 before:absolute before:inset-0 before:rounded-full before:transition-all before:duration-300 z-[100] xl:w-14 xl:h-14 2xl:w-16 2xl:h-16"
 				aria-label="Abrir menú"
+				aria-controls="menu-panel"
+				aria-expanded="false"
+				type="button"
 			>
 				<div
 					class="relative w-7 h-7 flex items-center justify-center xl:w-8 xl:h-8 2xl:w-9 2xl:h-9"
@@ -105,45 +110,10 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 		</footer>
 	</div>
 
-	<!-- Menú desplegable -->
-	<div
-		id="menu-overlay"
-		class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 z-40"
-	>
-	</div>
-
-	<!-- Logo VI grande (izquierda del menú) -->
-	<div
-		id="menu-logo-container"
-		class="fixed top-0 left-0 h-screen w-1/2 opacity-0 pointer-events-none transition-opacity duration-700 z-45 flex items-center justify-center"
-	>
-		<div class="relative w-full h-full">
-			<!-- Imagen de fondo (se cambiará según la sección activa) -->
-			<img
-				id="menu-bg-image"
-				src="/menu-bg.jpg"
-				alt=""
-				class="absolute inset-0 w-full h-full object-cover"
-			/>
-			<!-- Overlay oscuro -->
-			<div class="absolute inset-0 bg-black/40"></div>
-			<!-- Logo VI -->
-			<div class="absolute inset-0 flex items-center justify-center">
-				<div class="relative">
-					<LogoVI class="text-white w-96 drop-shadow-2xl" />
-					<span
-						class="absolute top-0 right-0 text-white text-xs font-bold translate-x-4 -translate-y-2"
-						>TM</span
-					>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Botón de cerrar independiente (cruz) -->
 	<button
 		id="menu-close"
 		class="fixed top-16 right-20 w-12 h-12 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-[100] bg-white/10 hover:bg-white/20 rounded-full group cursor-pointer xl:top-20 xl:right-24 xl:w-14 xl:h-14 2xl:top-24 2xl:right-32 2xl:w-16 2xl:h-16"
+		type="button"
 	>
 		<div
 			class="relative w-5 h-5 flex items-center justify-center xl:w-6 xl:h-6 2xl:w-7 2xl:h-7"
@@ -156,6 +126,13 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 			></span>
 		</div>
 	</button>
+
+	<!-- Menú desplegable -->
+	<div
+		id="menu-overlay"
+		class="fixed inset-0 bg-black/50 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500 z-40"
+	>
+	</div>
 
 	<nav
 		id="menu-panel"
@@ -278,15 +255,17 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 
 		<!-- Contenido del menú (mitad derecha del panel) -->
 		<div
-			class="w-1/2 px-12 pt-16 pb-8 flex flex-col xl:px-14 xl:pt-20 xl:pb-10 2xl:px-16 2xl:pt-24 2xl:pb-12"
+			class="w-1/2 px-6 pt-16 pb-8 flex flex-col sm:px-8 md:px-10 lg:px-12 xl:px-14 xl:pt-20 xl:pb-10 2xl:px-16 2xl:pt-24 2xl:pb-12"
 			style="background: linear-gradient(223.17deg, #1b1828 0%, #191725 20%, #161520 40%, #15141f 60%, #13131a 80%, #111117 100%)"
 		>
 			<!-- Nav principal horizontal -->
-			<ul class="flex gap-0 mb-12 xl:mb-14 2xl:mb-16">
+			<ul
+				class="flex h-12 xl:h-14 2xl:h-16 items-center gap-1.5 md:gap-2 lg:gap-3 xl:gap-4 mb-8 md:mb-10 xl:mb-14 2xl:mb-16"
+			>
 				<li>
 					<button
 						data-section="personajes"
-						class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold text-sm sm:text-sm md:text-md lg:text-lg xl:px-6 xl:py-3.5 2xl:px-7 2xl:py-6 2xl:text-3xl"
+						class="menu-main-item text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold whitespace-nowrap leading-none"
 					>
 						Personajes
 					</button>
@@ -294,7 +273,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 				<li>
 					<button
 						data-section="lugares"
-						class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold text-sm sm:text-sm md:text-md lg:text-lg xl:px-6 xl:py-3.5 2xl:px-7 2xl:py-6 2xl:text-3xl"
+						class="menu-main-item text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold whitespace-nowrap leading-none"
 					>
 						Lugares
 					</button>
@@ -302,7 +281,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 				<li>
 					<button
 						data-section="traileres"
-						class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold text-sm sm:text-sm md:text-md lg:text-lg xl:px-6 xl:py-3.5 2xl:px-7 2xl:py-6 2xl:text-3xl"
+						class="menu-main-item text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold whitespace-nowrap leading-none"
 					>
 						Tráilers
 					</button>
@@ -310,7 +289,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 				<li>
 					<button
 						data-section="descargas"
-						class="menu-main-item px-5 py-3 text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold text-sm sm:text-sm md:text-md lg:text-lg xl:px-6 xl:py-3.5 2xl:px-7 2xl:py-6 2xl:text-3xl"
+						class="menu-main-item text-white hover:text-yellow-100 transition-all duration-300 cursor-pointer rounded-full font-semibold whitespace-nowrap leading-none"
 					>
 						Descargas
 					</button>
@@ -454,7 +433,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 						>
 							<div class="w-1/2 relative">
 								<img
-									src="/src/assets/t2.webp"
+									src={Trailer2Img.src}
 									alt="Trailer 2"
 								/>
 								<!-- Play overlay -->
@@ -502,8 +481,8 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 						>
 							<div class="w-1/2 relative">
 								<img
-									src="/src/assets/t1.webp"
-									alt="Trailer 2"
+									src={Trailer1Img.src}
+									alt="Trailer 1"
 								/>
 								<!-- Play overlay -->
 								<span
@@ -832,6 +811,24 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 		.group:hover .arrow-icon {
 			color: #36364e;
 		}
+
+		/* Tipografías fluidas del menú para mantener proporciones 4K y ajustar en pantallas menores */
+		#menu-panel .menu-main-item {
+			font-size: clamp(0.95rem, 1.05vw, 1.875rem);
+			padding-block: clamp(0.5rem, 0.65vw, 1.5rem);
+			padding-inline: clamp(0.65rem, 0.9vw, 1.75rem);
+		}
+
+		#menu-panel #content-personajes .character-link,
+		#menu-panel #content-lugares .character-link {
+			font-size: clamp(2.8rem, 6.5vh, 8.5rem);
+			line-height: 0.92;
+		}
+
+		#menu-panel #content-personajes ul,
+		#menu-panel #content-lugares ul {
+			gap: clamp(0.28rem, 0.7vh, 1rem);
+		}
 	</style>
 
 	<script>
@@ -896,8 +893,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 
 		let isMenuOpen = false;
 
-		// Abrir menú
-		menuToggle?.addEventListener("click", () => {
+		const openMenu = () => {
 			isMenuOpen = true;
 			menuPanel?.classList.remove("translate-x-full");
 			menuOverlay?.classList.remove("opacity-0", "pointer-events-none");
@@ -921,8 +917,10 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 
 			// Animar botón hamburguesa a cruz
 			menuToggle?.classList.add("menu-open");
+			menuToggle?.setAttribute("aria-label", "Cerrar menú");
+			menuToggle?.setAttribute("aria-expanded", "true");
 
-			// Mostrar cruz de cerrar independiente
+			// Mostrar botón de cierre (X)
 			menuClose?.classList.remove("opacity-0", "pointer-events-none");
 			menuClose?.classList.add("opacity-100");
 
@@ -935,7 +933,7 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 					.querySelector('[data-section="personajes"]')
 					?.classList.add("active");
 			}
-		});
+		};
 
 		// Cerrar menú
 		const closeMenu = () => {
@@ -960,13 +958,23 @@ import AmbrosiaImg from "@/assets/ambrosia.webp";
 
 			// Volver hamburguesa
 			menuToggle?.classList.remove("menu-open");
+			menuToggle?.setAttribute("aria-label", "Abrir menú");
+			menuToggle?.setAttribute("aria-expanded", "false");
 
-			// Ocultar cruz de cerrar independiente
+			// Ocultar botón de cierre (X)
 			menuClose?.classList.add("opacity-0", "pointer-events-none");
 			menuClose?.classList.remove("opacity-100");
 		};
 
-		// Cerrar con botón cruz
+		// Abrir con el botón principal del header
+		menuToggle?.addEventListener("click", () => {
+			if (isMenuOpen) {
+				return;
+			}
+			openMenu();
+		});
+
+		// Cerrar con la X del menú desplegable
 		menuClose?.addEventListener("click", closeMenu);
 
 		// Cerrar al hacer clic en overlay
