@@ -16,6 +16,37 @@ import KeepScrolling from "@/assets/keep-scrolling.svg";
         <KeepScrolling
             class="fixed bottom-3 right-0 left-0 mx-auto text-pink-300 drop-shadow-2xl animate-bounce-pulse"
         />
+        <footer
+            class="absolute bottom-0 left-0 right-0 z-[120] border-t border-white/15 bg-black/65 backdrop-blur-md"
+        >
+            <div
+                class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-3 text-[11px] text-white/85 sm:flex-row sm:items-center sm:justify-between sm:text-xs"
+            >
+                <p class="text-balance">
+                    Este sitio ha sido construido exclusivamente con fines educativos y de aprendizaje.
+                    Todos los derechos sobre Grand Theft Auto, GTA VI, marcas, logos e imagenes asociadas
+                    pertenecen a Rockstar Games y Take-Two Interactive.
+                </p>
+                <div class="flex items-center gap-4">
+                    <a
+                        href="https://github.com/Fr4n0m/gta-vi-website"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="rounded-full border border-white/30 px-3 py-1 font-semibold text-white transition-colors duration-300 hover:border-white hover:bg-white hover:text-black"
+                    >
+                        GitHub
+                    </a>
+                    <a
+                        href="https://codebyfran.es"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="font-semibold text-yellow-100 underline underline-offset-4 hover:text-white"
+                    >
+                        Fr4n0m
+                    </a>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
 
@@ -49,6 +80,7 @@ import KeepScrolling from "@/assets/keep-scrolling.svg";
 
     body {
         background-color: #111;
+        position: relative;
         height: 300vh;
         overflow-x: hidden;
         overscroll-behavior: none;
