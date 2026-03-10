@@ -1,5 +1,24 @@
 # 🎮 GTA VI - Fan Website
 
+<p align="center">
+  <a href="https://astro.build"><img src="https://img.shields.io/badge/Astro-5.14.1-FF5D01?logo=astro&logoColor=white" alt="Astro"></a>
+  <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-4.1.13-06B6D4?logo=tailwind-css&logoColor=white" alt="Tailwind CSS"></a>
+  <a href="https://greensock.com/gsap/"><img src="https://img.shields.io/badge/GSAP-3.13.0-88CE02?logo=greensock&logoColor=white" alt="GSAP"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?logo=javascript&logoColor=black" alt="JavaScript"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-Educational-blue" alt="License"></a>
+</p>
+
+<a id="top"></a>
+
+## 🌐 Navegación Rápida / Quick Navigation
+
+- 🇪🇸 [Ir a versión en Español](#es)
+- 🇺🇸 [Go to English version](#en)
+
+---
+
+<a id="es"></a>
+
 ![gta-vi-website-1](https://github.com/user-attachments/assets/418f8662-5102-4859-942b-a95588ee879b)
 
 > **Proyecto educativo sin fines comerciales**
@@ -189,7 +208,13 @@ Todos los elementos escalan proporcionalmente:
 
 ## 🤝 Contribuciones
 
-Este es un proyecto educativo. Si deseas contribuir con mejoras técnicas:
+¿Te gustaría mejorar este proyecto? Los PRs son bienvenidos y ayudan a hacerlo más útil para la comunidad.
+
+- 🛠️ Puedes proponer mejoras de rendimiento, accesibilidad, UI o estructura
+- 🧪 Si puedes, añade pruebas o validaciones junto con tus cambios
+- 💬 Si tienes dudas, abre primero un issue y lo revisamos
+
+Pasos recomendados:
 
 1. Fork el proyecto
 2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
@@ -211,11 +236,17 @@ Este proyecto no reclama ningún derecho sobre el contenido de GTA VI y puede se
 
 **Recuerda**: Este es un proyecto educativo sin ánimo de lucro creado para practicar y demostrar habilidades de desarrollo web. No está afiliado ni respaldado por Rockstar Games o Take-Two Interactive.
 
-⭐ Si este proyecto te sirvió como inspiración o aprendizaje, considera darle una estrella en GitHub!
+⭐ Si este proyecto te sirvió como inspiración o aprendizaje, considera darle una estrella en GitHub.
+
+🔗 Portfolio: **[Fr4n0m | codebyfran.es](https://codebyfran.es)**
+
+⬆️ [Volver arriba](#top)
 
 ---
 
 # 🎮 GTA VI - Fan Website (English)
+
+<a id="en"></a>
 
 ![gta-vi-website-1](https://github.com/user-attachments/assets/418f8662-5102-4859-942b-a95588ee879b)
 
@@ -406,7 +437,13 @@ All elements scale proportionally:
 
 ## 🤝 Contributions
 
-This is an educational project. If you want to contribute with technical improvements:
+Want to improve this project? PRs are welcome and highly appreciated.
+
+- 🛠️ Feel free to propose performance, accessibility, UI, or architecture improvements
+- 🧪 If possible, include tests or validation with your changes
+- 💬 Open an issue first if you want to discuss a bigger idea
+
+Recommended flow:
 
 1. Fork the project
 2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
@@ -428,4 +465,8 @@ This project does not claim any rights over GTA VI content and can be removed up
 
 **Remember**: This is a non-profit educational project created to practice and showcase web development skills. It is not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.
 
-⭐ If this project helped or inspired you, consider giving it a star on GitHub!
+⭐ If this project helped or inspired you, consider giving it a star on GitHub.
+
+🔗 Portfolio: **[Fr4n0m | codebyfran.es](https://codebyfran.es)**
+
+⬆️ [Back to top](#top)
