@@ -60,7 +60,6 @@ gta-vi-website/
 │       └── index.astro  # Página principal
 ├── public/              # Archivos estáticos
 ├── astro.config.mjs     # Configuración de Astro
-├── tailwind.config.mjs  # Configuración de Tailwind
 ├── package.json         # Dependencias del proyecto
 └── README.md           # Este archivo
 ```
@@ -75,7 +74,7 @@ gta-vi-website/
 
 1. Clona el repositorio:
 ```bash
-git clone [url-del-repositorio]
+git clone https://github.com/Fr4n0m/gta-vi-website.git
 cd gta-vi-website
 ```
 
@@ -96,6 +95,7 @@ npm run dev
 | Comando | Descripción |
 |---------|-------------|
 | `npm run dev` | Inicia el servidor de desarrollo en `localhost:4321` |
+| `npm run lint` | Ejecuta validaciones de Astro (`astro check`) |
 | `npm run build` | Construye el sitio para producción en `./dist/` |
 | `npm run preview` | Vista previa del build de producción |
 | `npm run astro` | Ejecuta comandos CLI de Astro |
@@ -212,3 +212,220 @@ Este proyecto no reclama ningún derecho sobre el contenido de GTA VI y puede se
 **Recuerda**: Este es un proyecto educativo sin ánimo de lucro creado para practicar y demostrar habilidades de desarrollo web. No está afiliado ni respaldado por Rockstar Games o Take-Two Interactive.
 
 ⭐ Si este proyecto te sirvió como inspiración o aprendizaje, considera darle una estrella en GitHub!
+
+---
+
+# 🎮 GTA VI - Fan Website (English)
+
+![gta-vi-website-1](https://github.com/user-attachments/assets/418f8662-5102-4859-942b-a95588ee879b)
+
+> **Educational project with no commercial purpose**
+
+An unofficial Grand Theft Auto VI tribute website, built for educational purposes to showcase modern web development skills, advanced animations, and responsive design.
+
+## ⚠️ Legal Notice
+
+**This is an educational and showcase project created exclusively for learning and web development practice purposes.**
+
+- ❌ It is **NOT an official website** of Rockstar Games or Take-Two Interactive
+- ❌ It has **NO affiliation** with Rockstar Games, Take-Two Interactive, or any related entity
+- ❌ It is **NOT intended for any commercial purpose**
+- ✅ All Grand Theft Auto VI rights belong to Rockstar Games and Take-Two Interactive
+- ✅ This project is only a technical demonstration of frontend development skills
+
+If you represent Rockstar Games or Take-Two Interactive and want this project to be removed, please contact me and it will be taken down immediately.
+
+![gta-vi-website-2](https://github.com/user-attachments/assets/e98d0f2c-5260-4812-9ea0-354fdaf0a9e6)
+
+## 🚀 Features
+
+### Design and UI/UX
+- 🎨 Modern design inspired by GTA VI aesthetics
+- 📱 **Responsive Design** - Optimized for all desktop resolutions (1024px - 4K)
+- 🎭 Dropdown menu with smooth animations and elegant transitions
+- 🖼️ Character and location showcase system with dynamic images
+- ⚡ GSAP animations (GreenSock Animation Platform)
+- 🎬 Trailer section with interactive previews
+- 📥 Downloads section with animated cards
+
+![gta-vi-website-3](https://github.com/user-attachments/assets/a335599e-8111-4709-8729-621d0a0c843a)
+
+### Technologies Used
+- **[Astro](https://astro.build)** - Modern web framework for static sites
+- **[Tailwind CSS](https://tailwindcss.com)** - Utility-first CSS framework
+- **[GSAP](https://greensock.com/gsap/)** - Professional animation library
+- **Vanilla JavaScript** - For interactions and menu logic
+
+### Technical Features
+- ⚡ Static architecture optimized for performance
+- 🎯 SEO-friendly
+- 🔄 Smooth transitions with controlled fade in/out
+- 📦 Modular and reusable components
+- 🎨 Consistent design system with CSS variables
+- 🖱️ Advanced hover effects with CSS transforms
+
+![gta-vi-website-4](https://github.com/user-attachments/assets/d968855b-232b-4ec3-b817-d535278efbef)
+
+## 📋 Project Structure
+
+```text
+gta-vi-website/
+├── src/
+│   ├── assets/          # Images, SVGs and visual resources
+│   ├── layouts/         # Base Astro layouts
+│   └── pages/           # Website pages
+│       └── index.astro  # Main page
+├── public/              # Static files
+├── astro.config.mjs     # Astro configuration
+├── package.json         # Project dependencies
+└── README.md            # This file
+```
+
+## 🛠️ Installation and Usage
+
+### Prerequisites
+- Node.js 18.0 or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Fr4n0m/gta-vi-website.git
+cd gta-vi-website
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser at `http://localhost:4321`
+
+### Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Starts the development server at `localhost:4321` |
+| `npm run lint` | Runs Astro checks (`astro check`) |
+| `npm run build` | Builds the site for production in `./dist/` |
+| `npm run preview` | Previews the production build |
+| `npm run astro` | Runs Astro CLI commands |
+
+## 🎨 Design Features
+
+### Hero Section
+- Animated logo with SVG mask effect
+- Play button with scale animation
+- Footer with cut logo and descriptive text
+- Scroll animations with GSAP ScrollTrigger
+
+### Navigation Menu
+- Hamburger menu with cross animation
+- Split panel with background image (left) and navigation (right)
+- **Sequential animations:**
+  1. Right panel slides in from the right (700ms)
+  2. Left panel fades in (600ms + 400ms delay)
+  3. Logo fades in (1000ms + additional 600ms delay)
+- Tab system: Characters, Places, Trailers, Downloads
+- Hover effect on characters/places shows images with smooth transitions
+
+### Characters and Places Section
+- 8 main characters with individual images
+- 6 iconic game locations
+- Large bold text with condensed typography
+- Hover states displaying fullscreen images
+- 1000ms opacity transitions for cinematic effects
+
+### Trailers Section
+- Cards with video previews
+- "New" badges for recent content
+- Play overlays with blur and transparency
+- Visible durations on each preview
+- Hover states with background changes
+
+### Downloads Section
+- Visual cards for Videos, Screenshots, and Artwork
+- Circular arrow icons with color change on hover
+- Subtle zoom effects (99% scale) on images
+- Yellow borders appearing smoothly on hover (700ms)
+- Increased image brightness (brightness-125)
+- "View all downloads" button with arrow icon
+
+### Menu Footer
+- Language selector
+- Motion mode selector
+- Custom SVG icons
+
+## 🎯 Responsive Design
+
+The website is optimized for all desktop resolutions:
+
+- **1024px - 1279px (lg)**: Landscape tablets and small monitors
+- **1280px - 1535px (xl)**: Laptops and standard monitors
+- **1536px+ (2xl)**: Large monitors and 4K
+
+All elements scale proportionally:
+- Text: 6xl → 7xl → 8xl
+- Spacing: increases gradually
+- Images and containers: keep proportions
+- Download cards: 200px → 240px → 280px
+
+## 🎨 Color Palette
+
+```css
+/* Main gradients */
+--gradient-left: linear-gradient(135deg, #286074 0%, #523c47 100%)
+--gradient-right: linear-gradient(223.17deg, #1b1828 0%, #111117 100%)
+
+/* Accent colors */
+--yellow-accent: #fef3c7
+--purple-dark: #36364e
+--pink-accent: #cc96bc
+```
+
+## 📝 Credits
+
+### Development
+- UI/UX Design: Inspired by Rockstar Games official material
+
+### Resources
+- **Images and Assets**: Taken from official GTA VI promotional material
+- **Typography**: Custom fonts similar to GTA aesthetics
+- **Icons**: Custom and optimized SVGs
+
+### Technologies
+- Astro v5.14.1
+- Tailwind CSS v4.1.13
+- GSAP v3.13.0
+
+## 🤝 Contributions
+
+This is an educational project. If you want to contribute with technical improvements:
+
+1. Fork the project
+2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is created only for **educational and showcase purposes**.
+
+**All intellectual property rights of Grand Theft Auto VI, including content, images, logos, and related material belong exclusively to:**
+- **Rockstar Games**
+- **Take-Two Interactive Software, Inc.**
+
+This project does not claim any rights over GTA VI content and can be removed upon request by the rights holders.
+
+---
+
+**Remember**: This is a non-profit educational project created to practice and showcase web development skills. It is not affiliated with or endorsed by Rockstar Games or Take-Two Interactive.
+
+⭐ If this project helped or inspired you, consider giving it a star on GitHub!
